@@ -67,6 +67,13 @@ class UsersController extends AppController {
         $this->redirect(array('action'=>'login'));
       }
     }
+	
+	// Protect deleting friends: must be logged in
+	if ($this->action == 'delete_friend') {
+		if (!$this->logged_in()) {
+			$this->redirect(array('action'=>'login'));
+		}
+	}
   }
   
   /**
@@ -244,5 +251,31 @@ class UsersController extends AppController {
     $user_id = $this->Auth->user('id');
     $requests = $this->User->get_friend_requests($user_id);
     $this->set('requests', $requests);
+  }
+  
+  /**
+   * Delete a friend.
+   * 
+   * @param friend_id the id of the friend to delete
+   */
+  public function delete_friend($friend_id) {
+  	// If no friend_id provided give error
+  	if ($friend_id) {
+	  	$user_id = $this->Auth->user('id');
+			// If successfully removed friendship
+			if ($this->User->delete_friend($user_id, $friend_id)) {
+				$this->Session->setFlash('Friend removed', 'default', array('class'=>'success'));
+		   	$this->redirect(array('action'=>'friends'));
+			}
+			// If something went wrong and could not remove friendship
+			else {
+				$this->Session->setFlash('Friend could not be removed', 'default', array('class'=>'error'));
+		   	$this->redirect(array('action'=>'friends'));
+			}
+		}
+		else {
+			$this->Session->setFlash('Invalid friend.', 'default', array('class'=>'error'));
+		   	$this->redirect(array('action'=>'friends'));
+		}
   }
 }

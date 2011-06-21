@@ -200,4 +200,26 @@ class User extends AppModel {
     }
     return $requests;
   }
+  
+  /**
+   * Delete a friend.
+	 * Remove both friendships.
+   * 
+   * @param user_id the user who is deleting a friend
+   * @param friend_id the friend to delete
+   * @param boolean true or false if delete was successful
+   */
+  public function delete_friend($user_id, $friend_id) {
+  	$friendship = $this->UsersUser->find('first', array('conditions'=>array('user_id'=>$user_id, 'friend_id'=>$friend_id, 'accepted'=>1)));
+		$opposite_friendship = $this->UsersUser->find('first', array('conditions'=>array('user_id'=>$friend_id, 'friend_id'=>$user_id, 'accepted'=>1)));
+		if (!empty($friendship) && !empty($opposite_friendship)) {
+			if ($this->UsersUser->delete($friendship['UsersUser']['id']) && 
+					$this->UsersUser->delete($opposite_friendship['UsersUser']['id'])) {
+				return TRUE;
+			}
+		}
+		else {
+			return FALSE;
+		}
+  }
 }
