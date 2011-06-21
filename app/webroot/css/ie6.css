@@ -1,0 +1,47 @@
+#header-content img, #header-content {
+	behavior: url('http://localhost/cake-csingles/iepngfix.htc');
+}
+
+#header h1 {
+	background: url(../img/logo.png) no-repeat;
+	height: 46px;
+	text-indent: -9999em;
+	margin-top: 25px;
+	margin-left: 140px;
+	behavior: url('http://localhost/cake-csingles/iepngfix.htc');
+}
+
+.button, #signup-process li {
+  behavior: url('http://localhost/cake-csingles/iepngfix.htc'); 
+}
+
+#sidebar-content {
+	width: 135px;
+	float: right;
+	margin-bottom: 25px;
+	margin-right: 5px;
+  position: absolute;
+  top: 120px;
+  left: 760px;
+}
+
+div.sidebarclass1 {
+	/*top: -610px;
+	left: 757px; */
+	margin-top: -30px;
+	overflow: hidden;
+}
+
+div.sidebarclass2 {
+	/*top: -825px;
+	left: 757px; */
+	margin-top: -250px;
+	overflow: hidden;
+}
+
+div.sidebarclass3 {
+/*	top: -560px;
+	left: 757px; */
+	overflow: hidden;
+	margin-top: -30px;
+}
