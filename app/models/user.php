@@ -207,7 +207,7 @@ class User extends AppModel {
    * 
    * @param user_id the user who is deleting a friend
    * @param friend_id the friend to delete
-   * @param boolean true or false if delete was successful
+   * @return boolean true or false if delete was successful
    */
   public function delete_friend($user_id, $friend_id) {
   	$friendship = $this->UsersUser->find('first', array('conditions'=>array('user_id'=>$user_id, 'friend_id'=>$friend_id, 'accepted'=>1)));
