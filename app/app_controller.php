@@ -22,6 +22,8 @@ class AppController extends Controller {
     $this->set('current_user', $this->current_user());
     // Check for an admin
     $this->set('is_admin', $this->is_admin());
+		// Check for being on the login or add action
+		$this->set('not_login_register', $this->not_login_register());
   }
 
   /**
@@ -66,4 +68,18 @@ class AppController extends Controller {
   protected function not_friends_or_self() {
     
   }
+	
+	/**
+	 * Checks if the action is login or add.
+	 * Dont display the login or register form that is 
+	 * in the header and mid-banner if on these actions.
+	 * 
+	 * @return boolean false if on login or add action
+	 */
+	protected function not_login_register() {
+		if ($this->action == 'login' || $this->action == 'add') {
+			return FALSE;
+		}
+		return TRUE;
+	}
 }

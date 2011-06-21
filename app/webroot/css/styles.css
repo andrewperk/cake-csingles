@@ -104,6 +104,45 @@ body {
   text-decoration: underline;
 }
 
+/* ---- login form in header styles ----- */
+
+#login form {
+	position: absolute;
+	top: 15px;
+	left: 510px;
+	color: #fff;
+	font-size: 90%;
+}
+
+#login form label {
+	float: left;
+	width: 70px;
+}
+
+#login form input {
+	margin-bottom: 5px;
+	padding: 1px;
+}
+
+#login form input.button {
+	background: url(../img/register-button.png) no-repeat top left;
+	border: none;
+	color: #fff;
+	height: 26px;
+	width: 78px;
+	margin-left: 75px;
+	cursor: pointer;
+}
+
+#content input.button {
+  background: url(../img/register-button.png) no-repeat top left;
+	border: none;
+	color: #fff;
+	height: 26px;
+	width: 78px;
+	cursor: pointer;
+}
+
 /* ----- main-nav styles ----- */
 
 #main-nav {
@@ -189,25 +228,6 @@ body {
 	margin-left: 60px;
 }
 
-#mid-banner #register-button {
-  display: block;
-  position: absolute;
-	top: 40px;
-	left: 495px;
-	color: #fff;
-	font-size: 30px;
-  text-align: center;
-	font-weight: bold;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  width: 200px;
-  height: 100px;
-  border: 1px solid #000;
-  background-color: #cb9c43;
-  line-height: 90px;
-}
-
 #mid-banner #register-button a:link, #mid-banner #register-button a:visited {
   color: #fff;
   text-decoration: none;
@@ -216,6 +236,42 @@ body {
 
 #mid-banner #register-button a:hover, #mid-banner #register-button a:active {
   color: #fff968;
+}
+
+/* ----- mid-banner registration form styles ----- */
+
+#mid-banner form {
+	position: absolute;
+	top: 15px;
+	left: 450px;
+	color: #fff;
+	font-size: 90%;
+	font-weight: bold;
+}
+
+#mid-banner form input {
+	margin-bottom: 5px;
+	padding: 1px;
+}
+
+#mid-banner form label {
+	float: left;
+	width: 125px;
+}
+
+#mid-banner form input.button {
+	background: url(../img/register-button.png) no-repeat top left;
+	border: none;
+	color: #fff;
+	height: 26px;
+	width: 78px;
+	margin-left: 75px;
+	cursor: pointer;
+}
+
+#mid-banner form input.button:hover {
+	color: #fff968;
+	cursor: pointer;
 }
 
 /* ----- signup-process styles ---- */

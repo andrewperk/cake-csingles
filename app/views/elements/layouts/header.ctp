@@ -12,9 +12,22 @@
       You are logged in as: &nbsp;<br /> <?php echo ucfirst($current_user['User']['username']); ?>.
     </p>
   <?php else: ?>
-    <p class="login">
-    	<?php echo $this->Html->link('Login', array('controller'=>'users', 'action'=>'login')); ?>
-    </p>
+  	<?php if ($not_login_register): ?>
+    	<?php echo $this->Form->create('User', array('controller'=>'users', 'action'=>'login')); ?>
+			<p>
+				<?php echo $this->Form->label('User.username', '&nbsp;'); ?>
+				<?php echo $this->Form->text('User.username', array('id'=>'login_username', 'value'=>'Username')); ?>
+			</p>
+			<p>
+				<?php echo $this->Form->label('User.password', '&nbsp;'); ?>
+				<?php echo $this->Form->password('User.password', array('id'=>'login_password', 'value'=>'Password')); ?>
+			</p>
+			<p>
+				<label for="login_button">&nbsp;</label>
+				<?php echo $this->Form->submit('Login', array('id'=>'login_button', 'class'=>'button', 'div'=>FALSE)); ?>
+			</p>
+			<?php echo $this->Form->end(); ?>
+		<?php endif; ?>
   <?php endif; ?>
   </div>
   

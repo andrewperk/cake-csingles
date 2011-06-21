@@ -14,7 +14,9 @@
       <?php echo $this->element('layouts/header'); ?>
       <?php echo $this->element('layouts/nav'); ?>
       <?php if (!$logged_in): ?>
-      <?php echo $this->element('layouts/mid-banner'); ?>
+	      <?php if ($not_login_register): ?>
+	      	<?php echo $this->element('layouts/mid-banner'); ?>
+	      <?php endif; ?>
       <?php endif; ?>
       <div id="content">
         <div id="main-content">
