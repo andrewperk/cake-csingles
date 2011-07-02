@@ -2,6 +2,7 @@
 
 class User extends AppModel {
   public $hasOne = array('Avatar');
+  public $hasMany = array('Message');
   public $hasAndBelongsToMany = array(
     'Friend'=>array(
       'className'=>'User',

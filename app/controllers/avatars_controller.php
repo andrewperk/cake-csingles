@@ -2,7 +2,6 @@
 
 class AvatarsController extends AppController {
   public $components = array('Image');
-  public $uses = array('User', 'Avatar');
   
   public function beforeFilter() {
     parent::beforeFilter();
@@ -49,12 +48,12 @@ class AvatarsController extends AppController {
     $this->Avatar->id = $avatar_id;
     
     if (!empty($this->data)) {
-      // Delete the old avatar first
+      // Get the old avatar first to delete after successful update
       $avatar_to_delete = $avatar['Avatar']['avatar'];
-      $this->Image->delete_image($avatar_to_delete, 'avatars');
       // Save the new avatar
       if ($image_path = $this->Image->upload_image_and_thumbnail($this->data, 'avatar', 574, 100, "avatars", TRUE)) {
         if ($this->Avatar->save(array('Avatar'=>array('user_id'=>$this->Auth->user('id'), 'avatar'=>$image_path)))) {
+          $this->Image->delete_image($avatar_to_delete, 'avatars');
           $this->Session->setFlash('Your picture was saved.', 'default', array('class'=>'success'));
           $this->redirect(array('controller'=>'users', 'action'=>'view', $this->Auth->user('id')));
         }
@@ -70,6 +69,11 @@ class AvatarsController extends AppController {
     $this->set('avatar', $avatar);
   }
   
+  /**
+   * Checks if the logged in user has an avatar.
+   *
+   * @return boolean true if user has an avatar.
+   */
   private function has_avatar() {
     if ($this->Avatar->findByUserId($this->Auth->user('id'))) {
       return TRUE;

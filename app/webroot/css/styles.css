@@ -8,8 +8,13 @@
 body {
 	text-align: center;
 	background-color: #ffff99;
-	font-size: 100%;
+	font-size: 95%;
 	margin-bottom: 15px;
+}
+
+
+input {
+	font-family: sans-serif; /* IE password field fix */
 }
 
 /* ----- container styles ----- */
@@ -161,7 +166,7 @@ body {
 #main-nav li {
 	float: left;
 	padding: 0 15px 0 0;
-	margin-top: 13px;
+	margin-top: 16px;
 }
 
 #main-nav li a {
@@ -310,9 +315,10 @@ body {
 /* ----- content styles ----- */
 
 #content {
-	/* clear: left; */
+	clear: left;
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	position: relative;
+	zoom: 1.0; /* IE Text Shift Fix */
 }
 
 /* ----- main-content styles ----- */
@@ -349,6 +355,20 @@ body {
 	margin-left: 30px;
 }
 
+/* ----- main-content link styles ----- */
+
+#main-content a:link, #main-content a:visited {
+	color: #00f;
+	text-decoration: none;
+	border-bottom: 1px dotted #00f;
+}
+
+#main-content a:hover, #main-content a:active {
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
+	color: #000;
+}
+
 /* ----- main-content form styles --- */
 
 #main-content form label {
@@ -370,7 +390,7 @@ body {
 }
 
 #main-content fieldset {
-  border:  none;
+  border: none;
   background-color: #eee;
   width: 101%;
   padding: 10px;
@@ -534,6 +554,50 @@ body {
   clear: both;
   left: 110px;
   top: -60px;
+}
+
+#friends a {
+	font-size: 12px;
+}
+/* ----- User Messages styles ----- */
+
+#messages {
+	overflow: hidden;
+}
+
+#messages #avatar img {
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+#messages p, #message p {
+	margin: 0 0 15px 0;
+	padding: 5px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+
+#messages .message-header, #message .message-header {
+	font-weight: bold;
+	margin-left: 10px;
+	line-height: 25px;
+	border-bottom: 1px solid #333;
+}
+
+#messages .message-preview {
+	display: block;
+	margin-left: 60px;
+}
+
+#message .message-preview {
+	display: block;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#messages a, #message a {
+	font-size: 12px;
 }
 
 /* ----- user-sidebar styles ---- */

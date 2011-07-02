@@ -17,7 +17,10 @@
         <li><?php echo $this->Html->link('View Profile', array('controller'=>'users', 'action'=>'view', $current_user['User']['id']))?></li>
         <li><?php echo $this->Html->link('Avatar', array('controller'=>'avatars', 'action'=>'add'))?></li>
       </ul>
-    </li> 
+    </li>
+    <li>
+      <?php echo $this->Html->link('Messages', array('controller'=>'messages', 'action'=>'index')); ?>
+    </li>
     <li><?php echo $this->Html->link('Logout', array('controller'=>'users', 'action'=>'logout'))?></li>        
     <?php endif; ?>
   </ul>

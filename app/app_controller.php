@@ -45,7 +45,7 @@ class AppController extends Controller {
    */
   protected function current_user() {
     if ($this->logged_in()) {
-      return $this->User->read(NULL, $this->Auth->user('id'));
+			return $this->Auth->user();
     }
   }
   

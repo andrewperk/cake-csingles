@@ -1,3 +1,5 @@
+<h1>Register For Canary Singles</h1>
+<div id="register">
 <fieldset>
   <legend>Register</legend>
   <?php echo $this->Form->create('User', array('action'=>'add')); ?>
@@ -10,3 +12,4 @@
   <p><?php echo $this->Form->submit('Register', array('class'=>'button', 'div'=>false)); ?></p>
 <?php echo $this->Form->end(); ?>
 </fieldset>
+</div>

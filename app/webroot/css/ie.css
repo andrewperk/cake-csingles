@@ -1,0 +1,14 @@
+#personal-info, #profile-info, #add-avatar, #edit-avatar, #register, #login-fieldset {
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+#main-content fieldset legend {
+  font-size: 125%;
+	font-family: Georgia, Garamond, serif;
+	color: #876925;
+  margin-top: -35px;
+	background-color: #eee;
+	padding: 5px;
+  width: 50%;
+}
