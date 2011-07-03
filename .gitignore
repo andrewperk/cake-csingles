@@ -5,4 +5,4 @@
 /app/webroot/img/avatars/big/*
 /app/webroot/img/avatars/small/*
 /app/plugins/paypal_ipn/config/paypal_ipn_config.php
-/.redcar
+.redcar
