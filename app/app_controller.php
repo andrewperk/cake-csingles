@@ -1,7 +1,7 @@
 <?php
 
 class AppController extends Controller {
-  public $helpers = array('Form', 'Html', 'Session');
+  public $helpers = array('Form', 'Html', 'Session', 'PaypalIpn.Paypal');
   public $components = array('Session', 'Auth', 'Security');
 
   /**
