@@ -5,3 +5,5 @@
 <!--[if IE]>
 <?php echo $this->Html->css('ie'); ?>
 <![endif]-->
+<!-- Skin CSS file -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/assets/skins/sam/skin.css">

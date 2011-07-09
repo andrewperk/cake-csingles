@@ -7,9 +7,16 @@
 
     <?php echo $this->element('layouts/stylesheets'); ?>
 
-    <?php echo $this->Html->script('drop-menu'); ?>
+		<!-- Utility Dependencies -->
+		<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+		<script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script> 
+		<!-- Needed for Menus, Buttons and Overlays used in the Toolbar -->
+		<script src="http://yui.yahooapis.com/2.9.0/build/container/container_core-min.js"></script>
+		<!-- Source file for Rich Text Editor-->
+		<script src="http://yui.yahooapis.com/2.9.0/build/editor/simpleeditor-min.js"></script>
+
   </head>
-  <body>
+  <body class="yui-skin-sam">
     <div id="container">
       <?php echo $this->element('layouts/header'); ?>
       <?php echo $this->element('layouts/nav'); ?>

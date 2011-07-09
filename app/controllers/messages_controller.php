@@ -41,4 +41,33 @@ class MessagesController extends AppController {
     $this->set('friend_id', $friend_id);
     $this->set('title_for_layout', 'Canary Singles - Send Message');
   }
+  
+  public function reply($message_id = NULL, $friend_id = NULL) {
+    // Send Reply
+    if (!empty($this->data)) {
+      // Check that the message belongs to the logged in user and
+      // that they are friends before sending message
+      if (!$this->Message->find('first', array('conditions'=>array('Message.friend_id'=>$this->Auth->user('id'), 'Message.id'=>$message_id))) && 
+          $this->Message->not_friends($this->Auth->user('id'), $this->data['Message']['friend_id']))
+      {
+        $this->Session->setFlash('Invalid message or friend.', 'default', array('class'=>'error'));
+        $this->redirect(array('controller'=>'users', 'action'=>'friends'));
+      }
+      
+      // They are friends, send the message.
+      $this->data['Message']['user_id'] = $this->Auth->user('id');
+      if ($this->Message->save($this->data)) {
+        $this->Session->setFlash('Message sent successfully', 'default', array('class'=>'success'));
+        $this->redirect(array('controller'=>'users', 'action'=>'friends'));
+      } else {
+        $this->Session->setFlash('Please correct the errors below:', 'default', array('class'=>'error'));
+      }
+    }
+    $original_message = $this->Message->find('first', array('conditions'=>array('Message.friend_id'=>$this->Auth->user('id'), 'Message.id'=>$message_id)));
+    $this->data['Message']['subject'] = "Re: " . $original_message['Message']['subject'];
+    $this->data['Message']['body'] = "<div style=\"color: #999;\"><p><strong>Original Message:</strong></p>" . $original_message['Message']['body'] . "</div>";
+    $this->set('friend_id', $friend_id);
+    $this->set('original_message', $original_message);
+    $this->set('title_for_layout', 'Canary Singles - Send Message');
+  }
 }
