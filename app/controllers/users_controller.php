@@ -84,24 +84,33 @@ class UsersController extends AppController {
   	if (!empty($this->data)) {
   		// By name, gender, and state
   		if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_gender']) && !empty($this->data['User']['search_state'])) {
-  			$this->paginate = array('conditions' => array(
+  			$this->paginate = array('conditions' => array('OR'=>array(
 					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
+					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%',
+					'User.lastname LIKE' => '%'.$this->data['User']['search_name'].'%'),
+					'AND'=>array(
 					'User.gender'=>$this->data['User']['search_gender'],
-					'User.state'=>$this->data['User']['search_state']
+					'User.state'=>$this->data['User']['search_state'])
 				));
   		}
 			// by name and gender
 			else if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_gender'])) {
-  			$this->paginate = array('conditions' => array(
+  			$this->paginate = array('conditions' => array('OR'=>array(
 					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
-					'User.gender'=>$this->data['User']['search_gender']
+					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%',
+					'User.lastname LIKE' => '%'.$this->data['User']['search_name'].'%'),
+					'AND'=>array(
+					'User.gender'=>$this->data['User']['search_gender'])
 				));
   		}
 			// by name and state
 			else if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_state'])) {
-  			$this->paginate = array('conditions' => array(
+  			$this->paginate = array('conditions' => array('OR'=>array(
 					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
-					'User.state'=>$this->data['User']['search_state']
+					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%',
+					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%'),
+					'AND'=>array(
+					'User.state'=>$this->data['User']['search_state'])
 				));
   		}
 			// by gender and state
@@ -113,8 +122,10 @@ class UsersController extends AppController {
   		}
 			// by name
 			else if (!empty($this->data['User']['search_name'])) {
-  			$this->paginate = array('conditions' => array(
-					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%'
+  			$this->paginate = array('conditions' => array('OR'=>array(
+					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
+					'User.firstname LIKE' => '%'.$this->data['User']['search_name'],
+					'User.lastname LIKE' => '%'.$this->data['User']['search_name'])
 				));
   		}
 			// by gender
