@@ -80,9 +80,64 @@ class UsersController extends AppController {
    * Displays all users. 
    */
   public function index() {
-    $this->set('users', $this->paginate('User'));
-    $this->set('title_for_layout', 'Canary Singles');
-  }
+  	// Searching users
+  	if (!empty($this->data)) {
+  		// By name, gender, and state
+  		if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_gender']) && !empty($this->data['User']['search_state'])) {
+  			$this->paginate = array('conditions' => array(
+					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
+					'User.gender'=>$this->data['User']['search_gender'],
+					'User.state'=>$this->data['User']['search_state']
+				));
+  		}
+			// by name and gender
+			else if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_gender'])) {
+  			$this->paginate = array('conditions' => array(
+					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
+					'User.gender'=>$this->data['User']['search_gender']
+				));
+  		}
+			// by name and state
+			else if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_state'])) {
+  			$this->paginate = array('conditions' => array(
+					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
+					'User.state'=>$this->data['User']['search_state']
+				));
+  		}
+			// by gender and state
+			else if (!empty($this->data['User']['search_gender']) && !empty($this->data['User']['search_state'])) {
+  			$this->paginate = array('conditions' => array(
+					'User.gender' => $this->data['User']['search_gender'],
+					'User.state'=>$this->data['User']['search_state']
+				));
+  		}
+			// by name
+			else if (!empty($this->data['User']['search_name'])) {
+  			$this->paginate = array('conditions' => array(
+					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%'
+				));
+  		}
+			// by gender
+			else if (!empty($this->data['User']['search_gender'])) {
+  			$this->paginate = array('conditions' => array(
+					'User.gender' => $this->data['User']['search_gender']
+				));
+  		}
+			// by state
+			else if (!empty($this->data['User']['search_state'])) {
+  			$this->paginate = array('conditions' => array(
+					'User.state' => $this->data['User']['search_state']
+				));
+  		}
+			$results = $this->paginate('User');
+			$this->set('users', $results);
+		}
+		// Default retrieval of all users
+		else {
+    	$this->set('users', $this->paginate('User'));
+    	$this->set('title_for_layout', 'Canary Singles');
+  	}
+	}
   
   /**
    * Register a user. 
@@ -278,4 +333,8 @@ class UsersController extends AppController {
 		   	$this->redirect(array('action'=>'friends'));
 		}
   }
+	
+	public function search() {
+		
+	}
 }

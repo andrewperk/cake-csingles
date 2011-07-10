@@ -65,7 +65,6 @@ class MessagesController extends AppController {
     }
     $original_message = $this->Message->find('first', array('conditions'=>array('Message.friend_id'=>$this->Auth->user('id'), 'Message.id'=>$message_id)));
     $this->data['Message']['subject'] = "Re: " . $original_message['Message']['subject'];
-    $this->data['Message']['body'] = "<div style=\"color: #999;\"><p><strong>Original Message:</strong></p>" . $original_message['Message']['body'] . "</div>";
     $this->set('friend_id', $friend_id);
     $this->set('original_message', $original_message);
     $this->set('title_for_layout', 'Canary Singles - Send Message');

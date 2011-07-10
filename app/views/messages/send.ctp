@@ -1,14 +1,10 @@
 <fieldset>
   <legend>Send Message</legend>
-<?php
-echo $this->Form->create('Message', array('action'=>'send'));
-echo $this->Form->input('friend_id', array('type'=>'hidden', 'value'=>$friend_id));
-echo $this->Form->input('subject', array('div'=>FALSE));
-?>
+<?php echo $this->Form->create('Message', array('action'=>'send')); ?>
+<p><?php echo $this->Form->input('friend_id', array('type'=>'hidden', 'value'=>$friend_id)); ?></p>
+<p><?php echo $this->Form->input('subject', array('div'=>FALSE)); ?></p>
 <div id="yui-texteditor">
-<?php
-echo $this->Form->input('body', array('div'=>FALSE));
-?>
+<p><?php echo $this->Form->input('body', array('div'=>FALSE));  ?></p>
 </div>
 </fieldset>
 <?php

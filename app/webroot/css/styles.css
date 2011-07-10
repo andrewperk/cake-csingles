@@ -423,7 +423,7 @@ input {
   width: 400px;
 }
 
-#main-content form #UserAge {
+#main-content form #UserAge, #main-content form .state {
   width: 30px;
 }
 
@@ -439,6 +439,11 @@ input {
 
 #main-content ul.users li {
 	margin-bottom: 10px;
+}
+
+#main-content fieldset#search-users label {
+	display: inline;
+	margin: 0 3px 0 10px;
 }
 
 /* ----- Form errors ---- */

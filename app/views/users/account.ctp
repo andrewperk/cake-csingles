@@ -20,6 +20,7 @@
 <div id="profile-info">
   <fieldset>
     <legend>Profile Information</legend>
+    <p><?php echo $this->Form->input('state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state')); ?></p>
     <p><?php echo $this->Form->input('gender', array('div'=>FALSE, 'options'=>array('male'=>'male', 'female'=>'female'))); ?></p>
     <p><?php echo $this->Form->input('age', array('div'=>FALSE)); ?></p>
     <p><?php echo $this->Form->input('health_cond', array('div'=>FALSE, 'label'=>'Health Conditions')); ?></p>

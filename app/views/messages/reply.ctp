@@ -1,15 +1,13 @@
 <h1>Reply</h1>
 <fieldset>
   <legend>Your Message</legend>
-<?php
-echo $this->Form->create('Message', array('url'=>array('action'=>'reply')));
-echo $this->Form->input('friend_id', array('type'=>'hidden', 'value'=>$friend_id));
-echo $this->Form->input('subject', array('div'=>FALSE));
-?>
+<?php echo $this->Form->create('Message', array('url'=>array('action'=>'reply'))); ?>
+<p><?php echo $this->Form->input('friend_id', array('type'=>'hidden', 'value'=>$friend_id)); ?></p>
+<p><?php echo $this->Form->input('subject', array('div'=>FALSE)); ?></p>
 <div id="yui-texteditor">
-<?php
+<p><?php
 echo $this->Form->input('body', array('div'=>FALSE));
-?>
+?></p>
 </div>
 </fieldset>
 <?php
