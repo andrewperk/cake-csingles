@@ -27,7 +27,7 @@ class UsersController extends AppController {
     //  Protect the delete action: only admins
     if ($this->action == 'delete') {
       if (!$this->is_admin()) {
-        $this->redirect(array('action'=>'index'));
+        $this->redirect(array('controller'=>'pages', 'action'=>'index'));
       }
     }
     
@@ -38,8 +38,12 @@ class UsersController extends AppController {
       }
     }
     
-    // Protect send_friend_request: must be logged in
+    // Protect send_friend_request: must be logged in and subscribed
     if ($this->action == 'send_friend_request') {
+    	if ($this->isNotSubscribed()) {
+        $this->Session->setFlash('You need to upgrade your account to contact members.', 'default', array('class'=>'error'));
+        $this->redirect(array('action'=>'upgrade'));
+      }
       if (!$this->logged_in()) {
         $this->Session->setFlash('Please login to add friends', 'default', array('class'=>'error'));
         $this->redirect(array('action'=>'login'));
@@ -48,6 +52,10 @@ class UsersController extends AppController {
     
     // Protect accept_friend_request: must be logged in
     if ($this->action == 'accept_friend_request') {
+    	if ($this->isNotSubscribed()) {
+        	$this->Session->setFlash('You need to upgrade your account to contact members.', 'default', array('class'=>'error'));
+        	$this->redirect(array('action'=>'upgrade'));
+    	}
       if (!$this->logged_in()) {
         $this->Session->setFlash('Please login to approve friends', 'default', array('class'=>'error'));
         $this->redirect(array('action'=>'login'));
@@ -56,28 +64,48 @@ class UsersController extends AppController {
     
     // Protect friend_requests: must be logged in
     if ($this->action == 'friend_requests') {
+    	if ($this->isNotSubscribed()) {
+        $this->Session->setFlash('You need to upgrade your account to contact members.', 'default', array('class'=>'error'));
+        $this->redirect(array('action'=>'upgrade'));
+      }
       if (!$this->logged_in()) {
         $this->redirect(array('controller'=>'pages', 'action'=>'index'));
       }
     }
     
-    // Protect friends: must be logged in
+    // Protect friends: must be logged in and subscribed
     if ($this->action == 'friends') {
+    	if ($this->isNotSubscribed()) {
+        $this->Session->setFlash('You need to upgrade your account to have friends.', 'default', array('class'=>'error'));
+        $this->redirect(array('action'=>'upgrade'));
+      }
       if (!$this->logged_in()) {
         $this->redirect(array('action'=>'login'));
       }
     }
 	
-	// Protect deleting friends: must be logged in
-	if ($this->action == 'delete_friend') {
-		if (!$this->logged_in()) {
-			$this->redirect(array('action'=>'login'));
+		// Protect deleting friends: must be logged in and subscribed
+		if ($this->action == 'delete_friend') {
+			if ($this->isNotSubscribed()) {
+	        $this->Session->setFlash('You need to upgrade your account to contact members.', 'default', array('class'=>'error'));
+	        $this->redirect(array('action'=>'upgrade'));
+	    }
+			if (!$this->logged_in()) {
+				$this->redirect(array('action'=>'login'));
+			}
 		}
-	}
+
+		if ($this->action == 'upgrade') {
+			$this->set('is_not_subscribed', $this->isNotSubscribed());
+		}
   }
   
   /**
    * Displays all users. 
+	 * 
+	 * Also allows searching of users. Search has priority.
+	 * Otherwise it defaults to show all users.
+	 * 
    */
   public function index() {
   	// Searching users
@@ -345,7 +373,12 @@ class UsersController extends AppController {
 		}
   }
 	
-	public function search() {
-		
+	/**
+	 * Allows users to upgrade their account to be a 
+	 * paying subscriber.
+	 * 
+	 */
+	public function upgrade() {
+		$this->set('title_for_layout', 'Canary Singles');
 	}
 }

@@ -6,6 +6,20 @@ class MessagesController extends AppController {
   public function beforeFilter() {
     parent::beforeFilter();
     $this->Auth->deny('index');
+		
+		// Only subscribers can view, send, or reply to messages
+		// if ($this->action == "index" || $this->action == "send" || $this->action == "reply") {
+			// if ($this->isNotSubscribed()) {
+				// $this->Session->setFlash('You must upgrade your account to contact members.', 'default', array('class'=>'error'));
+				// $this->redirect(array('controller'=>'users', 'action'=>'upgrade'));
+			// }
+		// }
+		if ($this->action == "index" || $this->action == "view" || $this->action == "send" || $this->action == "reply") {
+			if ($this->isNotSubscribed()) {
+				$this->Session->setFlash("You must upgrade your account to contact members.", "default", array('class'=>'error'));
+				$this->redirect(array('controller'=>'users', 'action'=>'upgrade'));
+			}
+		}
   }
   
   public function index() {

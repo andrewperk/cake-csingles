@@ -3,7 +3,6 @@
 class AppController extends Controller {
   public $helpers = array('Form', 'Html', 'Session', 'PaypalIpn.Paypal');
   public $components = array('Session', 'Auth', 'Security');
-
   /**
    * Intializes Auth component variables.
    * 
@@ -25,6 +24,32 @@ class AppController extends Controller {
 		// Check for being on the login or add action
 		$this->set('not_login_register', $this->not_login_register());
   }
+	
+	/**
+	 * Paypal callback to handle what to do after a 
+	 * successful subscription. 
+	 * 
+	 * Upon successful subscription upgrade user to a a subscriber.
+	 * 
+	 * @param $txnId the paypal transaction id
+	 */
+	function afterPaypalNotification($txnId){
+		// Get the transaction	
+	  $transaction = ClassRegistry::init('PaypalIpn.InstantPaymentNotification')->findById($txnId);
+	  $this->log($transaction['InstantPaymentNotification']['id'], 'paypal');
+	
+		// check that it was complete
+	  if($transaction['InstantPaymentNotification']['payment_status'] == 'Completed'){
+	  	// grab the user variable that was returned from paypal and upgrade that user to subscribed
+	  	$user = ClassRegistry::init('User')->findById($transaction['InstantPaymentNotification']['custom']);
+			ClassRegistry::init('User')->id = $user['User']['id'];
+			ClassRegistry::init('User')->saveField('subscribed', 'yes');
+	  }
+	  else {
+	      //Oh no, better look at this transaction to determine what to do; like email a decline letter.
+	  }
+	} 
+	
 
   /**
    * Checks if a user is logged in.
@@ -81,5 +106,17 @@ class AppController extends Controller {
 			return FALSE;
 		}
 		return TRUE;
+	}
+	
+	/**
+	 * Checks if the logged in user is not a paid subscriber.
+	 * 
+	 * @rturn boolean true if not a subscriber
+	 */
+	protected function isNotSubscribed() {
+		if ($this->Auth->user('subscribed') != "yes") {
+			return TRUE;
+		}
+		return FALSE;
 	}
 }
