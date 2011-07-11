@@ -8,3 +8,4 @@
 <?php echo $this->Form->end(); ?>
 </fieldset>
 </div>
+<p>Don't have an account? <?php echo $this->Html->link("Register now for free", array('action'=>'add')); ?>!</p>

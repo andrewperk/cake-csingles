@@ -17,6 +17,7 @@ class UsersController extends AppController {
    */
   public function beforeFilter() {
     parent::beforeFilter();
+		$this->Auth->deny('index');
     $this->Auth->allow('add', 'view');
     
     // If registering or editing user use model for password hashing.

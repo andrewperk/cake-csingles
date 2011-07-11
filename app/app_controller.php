@@ -114,7 +114,8 @@ class AppController extends Controller {
 	 * @rturn boolean true if not a subscriber
 	 */
 	protected function isNotSubscribed() {
-		if ($this->Auth->user('subscribed') != "yes") {
+		$user = ClassRegistry::init('User')->findById($this->Auth->user('id'));
+		if ($user['User']['subscribed'] != "yes") {
 			return TRUE;
 		}
 		return FALSE;

@@ -1,4 +1,4 @@
-<h1>Register For Canary Singles</h1>
+<h1>Register Now - It's Free</h1>
 <div id="register">
 <fieldset>
   <legend>Register</legend>
@@ -13,3 +13,4 @@
 <?php echo $this->Form->end(); ?>
 </fieldset>
 </div>
+<p>Already a member? <?php echo $this->Html->link('Log in now', array('action'=>'login')); ?>.</p>
