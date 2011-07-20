@@ -1,7 +1,7 @@
 <?php
 
 class UsersController extends AppController {
-  public $helpers = array('Friend');
+  public $helpers = array('Friend', 'Text');
   public $paginate = array(
     'limit'=>'10'
   );
@@ -304,6 +304,13 @@ class UsersController extends AppController {
   public function send_friend_request($friend_id) {
     if ($friend_id) {
       $user_id = $this->Auth->user('id');
+			
+			// Make sure the friend being requested is a paid subscriber
+			if ($this->friendIsNotSubscribed($friend_id)) {
+				$this->Session->setFlash('Friendships can only occur between premium paid members.', 'default', array('class'=>'error'));
+				$this->redirect(array('controller'=>'messages', 'action'=>'chirp', $friend_id));
+			}
+			
       // Cant be friends with their self
       if ($friend_id == $user_id) {
         $this->Session->setFlash('You can\'t be friends with yourself.', 'default', array('class'=>'error'));

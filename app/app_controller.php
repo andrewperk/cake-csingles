@@ -111,10 +111,23 @@ class AppController extends Controller {
 	/**
 	 * Checks if the logged in user is not a paid subscriber.
 	 * 
-	 * @rturn boolean true if not a subscriber
+	 * @return boolean true if not a subscriber
 	 */
 	protected function isNotSubscribed() {
 		$user = ClassRegistry::init('User')->findById($this->Auth->user('id'));
+		if ($user['User']['subscribed'] != "yes") {
+			return TRUE;
+		}
+		return FALSE;
+	}
+	
+	/**
+	 * Checks if the friend requested is not a paid subscriber.
+	 * 
+	 * @return boolean true if not a subscriber
+	 */
+	protected function friendIsNotSubscribed($friend_id) {
+		$user = ClassRegistry::init('User')->findById($friend_id);
 		if ($user['User']['subscribed'] != "yes") {
 			return TRUE;
 		}

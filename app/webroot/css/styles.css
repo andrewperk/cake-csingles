@@ -487,23 +487,6 @@ input {
 	margin-right: 5px;
 }
 
-#main-content table {
-  border-collapse: collapse;
-  width: 700px;
-}
-
-#main-content table tr th {
-  border-top: 1px solid #FB7A31;
-	border-bottom: 1px solid #FB7A31;
-	background: #FFC;
-  padding: .4em 0;
-}
-
-#main-content table tr td {
-  border-bottom: 1px solid #000;
-  padding: .7em .6em;
-}
-
 /* ----- User profile styles ----- */
 #main-content .profile {
  clear: both;
@@ -540,6 +523,37 @@ input {
 
 #main-content #profile-header h2 {
   line-height: 90px;
+}
+
+/* ----- Users Search ----- */
+
+.user {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin-bottom: 10px;
+	clear: both;
+	overflow: hidden;
+	height: 150px;
+	font-size: 12px;
+}
+
+.user .avatar {
+	float: left;
+	background: #ccc;
+	height: 153px;
+  width: 100px;
+}
+
+.user .avatar img {
+	margin-top: 25px;
+}
+
+.user .headline {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+	padding-left: 100px;
+	font-weight: bold;
+	color: #555;
 }
 
 /* ---- Friends view styles ----- */
@@ -788,4 +802,11 @@ fieldset .user-sidebar {
 .float-left {
   float: left;
   display: block;
+}
+
+#main-content form p.help {
+	font-size: 11px;
+	margin-top: -10px;
+	margin-bottom: 15px;
+	display: block;
 }

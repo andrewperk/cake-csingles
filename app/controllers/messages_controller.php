@@ -7,13 +7,6 @@ class MessagesController extends AppController {
     parent::beforeFilter();
     $this->Auth->deny('index');
 		
-		// Only subscribers can view, send, or reply to messages
-		// if ($this->action == "index" || $this->action == "send" || $this->action == "reply") {
-			// if ($this->isNotSubscribed()) {
-				// $this->Session->setFlash('You must upgrade your account to contact members.', 'default', array('class'=>'error'));
-				// $this->redirect(array('controller'=>'users', 'action'=>'upgrade'));
-			// }
-		// }
 		if ($this->action == "index" || $this->action == "view" || $this->action == "send" || $this->action == "reply") {
 			if ($this->isNotSubscribed()) {
 				$this->Session->setFlash("You must upgrade your account to contact members.", "default", array('class'=>'error'));
@@ -39,19 +32,23 @@ class MessagesController extends AppController {
     if (!empty($this->data)) {
       // Check that they are friends before sending message
       if ($this->Message->not_friends($this->Auth->user('id'), $this->data['Message']['friend_id'])) {
-        $this->Session->setFlash('You are not friends with that user.', 'default', array('class'=>'error'));
-        $this->redirect(array('controller'=>'users', 'action'=>'friends'));
+        $this->Session->setFlash('You are not friends with that user, request their friendship.', 'default', array('class'=>'error'));
+        $this->redirect(array('controller'=>'users', 'action'=>'view', $this->data['Message']['friend_id']));
       }
       
       // They are friends, send the message.
       $this->data['Message']['user_id'] = $this->Auth->user('id');
       if ($this->Message->save($this->data)) {
         $this->Session->setFlash('Message sent successfully', 'default', array('class'=>'success'));
-        $this->redirect(array('controller'=>'users', 'action'=>'friends'));
+        $this->redirect(array('controller'=>'messages', 'action'=>'index'));
       } else {
         $this->Session->setFlash('Please correct the errors below:', 'default', array('class'=>'error'));
       }
     }
+		if ($this->Message->not_friends($this->Auth->user('id'), $friend_id)) {
+	    $this->Session->setFlash('You are not friends with that user, request their friendship.', 'default', array('class'=>'error'));
+	  	$this->redirect(array('controller'=>'users', 'action'=>'view', $friend_id));
+	  }
     $this->set('friend_id', $friend_id);
     $this->set('title_for_layout', 'Canary Singles - Send Message');
   }
@@ -83,4 +80,8 @@ class MessagesController extends AppController {
     $this->set('original_message', $original_message);
     $this->set('title_for_layout', 'Canary Singles - Send Message');
   }
+
+	public function chirp($friend_id = NULL) {
+		
+	}
 }

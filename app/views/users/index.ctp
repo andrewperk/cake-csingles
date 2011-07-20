@@ -16,33 +16,49 @@
 <?php echo $this->Paginator->next('Next ->', NULL, NULL, array('class'=>'disabled')); ?> 
 <?php echo $this->Paginator->counter(); ?> 
 </div>
-<table>
-  <tr>
-    <th>Username</th>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <?php if($is_admin): ?>
-      <th>Email</th>
-    <?php endif; ?>
-    <th>Actions</th>
-  </tr>
+
+
 <?php foreach($users as $user): ?>  
-  <tr>
-    <td><?php echo ucfirst($user['User']['username']); ?></td>
-    <td><?php echo $user['User']['firstname']; ?></td>
-    <td><?php echo $user['User']['lastname']; ?></td>
-    <?php if($is_admin): ?>
-      <td><?php echo $user['User']['email']; ?></td>
-    <?php endif; ?>
-    <td>
-      <?php echo $this->Html->link('View', array('action'=>'view', $user['User']['id'])); ?>
-      <?php if($is_admin): ?>
-         | <?php echo $this->Html->link('delete', array('action'=>'delete', $user['User']['id'])); ?>
-      <?php endif; ?>
-    </td>
-  </tr>  
+<div class="user">
+	<p class="avatar">
+	<?php if ($user['Avatar']['avatar']): ?>
+  	<?php echo $this->Html->image('avatars/small/' . $user['Avatar']['avatar']); ?>
+	<?php else: ?>
+  	<?php echo $this->Html->image('avatar.gif'); ?>
+	<?php endif; ?>
+	</p>
+	
+	<p class="headline">
+	<?php if ($user['User']['headline']): ?>
+		<?php echo $this->Text->truncate($user['User']['headline'], 100); ?>
+	<?php else: ?>
+		This user hasn't created a headline.
+	<?php endif; ?>
+	</p>
+	
+	<p class="username"><?php echo $this->Html->link($user['User']['username'], array('action'=>'view', $user['User']['id'])); ?> 
+		<?php if ($user['User']['gender']): ?>
+			- <?php echo $user['User']['gender']; ?> 
+			<?php if ($user['User']['age']): ?>
+				<?php echo $user['User']['age']; ?> years old.
+			<?php endif; ?>
+		<?php endif; ?>
+		</p>
+	
+	<p class="description">
+	<?php if ($user['User']['desc']): ?>
+		<?php echo $this->Text->truncate($user['User']['desc'], 180); ?>
+	<?php else: ?>
+		This user hasn't described themselves yet.
+	<?php endif; ?>
+	</p>
+	
+	<p><?php echo $this->Html->link('Send Message', array('controller'=>'messages', 'action'=>'send', $user['User']['id'])); ?> | 
+	<?php echo $this->Html->link('Send Chirp', array('controller'=>'messages', 'action'=>'chirp', $user['User']['id'])); ?>
+</div> 
 <?php endforeach; ?>
-</table>
+
+
 <div class="pagination">
 <?php echo $this->Paginator->numbers(array('separator'=>' ')); ?> 
 <?php echo $this->Paginator->prev('<- Previous', NULL, NULL, array('class'=>'disabled')); ?> 
