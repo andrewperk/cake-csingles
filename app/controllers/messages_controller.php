@@ -81,7 +81,4 @@ class MessagesController extends AppController {
     $this->set('title_for_layout', 'Canary Singles - Send Message');
   }
 
-	public function chirp($friend_id = NULL) {
-		
-	}
 }

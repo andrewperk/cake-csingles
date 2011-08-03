@@ -1,11 +1,11 @@
 <fieldset id="search-users">
-	<legend>Search Users</legend>
+	<legend>Search Members</legend>
 	<?php echo $this->Form->create('User'); ?>
 		<p><?php echo $this->Form->input('search_name', array('div'=>FALSE, 'label'=>'Name')); ?>
 		 <?php echo $this->Form->input('search_gender', array('div'=>FALSE, 'label'=>'Gender', 'options'=>array(''=>'', 'Male'=>'Male', 'Female'=>'Female'))); ?>
 		 <?php echo $this->Form->input('search_state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state', 'label'=>'State')); ?></p>
 	<?php
-		echo $this->Form->submit('Submit', array('class'=>'button'));
+		echo $this->Form->submit('Search', array('class'=>'button'));
 	?>
 </fieldset>
 <?php echo $this->Form->end(); ?>
@@ -53,8 +53,18 @@
 	<?php endif; ?>
 	</p>
 	
-	<p><?php echo $this->Html->link('Send Message', array('controller'=>'messages', 'action'=>'send', $user['User']['id'])); ?> | 
-	<?php echo $this->Html->link('Send Chirp', array('controller'=>'messages', 'action'=>'chirp', $user['User']['id'])); ?>
+	<p>
+		<?php // For not subscribed people show a chirp link
+		if ($this->Friend->user_not_subscribed($user['User']['id'])): ?>
+			<?php echo $this->Html->link('Send Chirp', array('controller'=>'chirps', 'action'=>'chirp', $user['User']['id'])); ?> | 
+		<?php else: ?>
+			<?php if ($this->Friend->not_friend_or_self($user['User']['id'])):?>
+				<?php echo $this->Html->link('Request Friend', array('controller'=>'users', 'action'=>'send_friend_request', $user['User']['id'])); ?> |
+			<?php else:?>
+				<?php echo $this->Html->link('Send Message', array('controller'=>'messages', 'action'=>'send', $user['User']['id'])); ?> |
+			<?php endif; ?>
+		<?php endif; ?>
+		<?php echo $this->Html->link('View Profile', array('controller'=>'users', 'action'=>'view', $user['User']['id'])); ?>
 </div> 
 <?php endforeach; ?>
 

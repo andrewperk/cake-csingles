@@ -16,10 +16,16 @@
         <li><?php echo $this->Html->link('Edit Account', array('controller'=>'users', 'action'=>'account'))?></li>
         <li><?php echo $this->Html->link('View Profile', array('controller'=>'users', 'action'=>'view', $current_user['User']['id']))?></li>
         <li><?php echo $this->Html->link('Avatar', array('controller'=>'avatars', 'action'=>'add'))?></li>
+        <?php if($is_not_subscribed): ?>
+        	<li><?php echo $this->Html->link('Upgrade Account', array('controller'=>'users', 'action'=>'upgrade'))?></li>
+        <?php endif; ?>
       </ul>
     </li>
     <li>
       <?php echo $this->Html->link('Messages', array('controller'=>'messages', 'action'=>'index')); ?>
+    </li>
+    <li>
+      <?php echo $this->Html->link('Chirps', array('controller'=>'chirps', 'action'=>'view')); ?>
     </li>
     <li><?php echo $this->Html->link('Logout', array('controller'=>'users', 'action'=>'logout'))?></li>        
     <?php endif; ?>

@@ -23,6 +23,8 @@ class AppController extends Controller {
     $this->set('is_admin', $this->is_admin());
 		// Check for being on the login or add action
 		$this->set('not_login_register', $this->not_login_register());
+		// Check if subscribed/paid/premium user
+		$this->set('is_not_subscribed', $this->isNotSubscribed());
   }
 	
 	/**
@@ -84,14 +86,6 @@ class AppController extends Controller {
       return TRUE;
     }
     return FALSE;
-  }
-  
-  /**
-   * Checks if they are friends or self 
-   * to determine if a friend link should be displayed.
-   */
-  protected function not_friends_or_self() {
-    
   }
 	
 	/**

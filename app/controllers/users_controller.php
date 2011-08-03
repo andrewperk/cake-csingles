@@ -175,8 +175,8 @@ class UsersController extends AppController {
 		// Default retrieval of all users
 		else {
     	$this->set('users', $this->paginate('User'));
-    	$this->set('title_for_layout', 'Canary Singles');
   	}
+		$this->set('title_for_layout', 'Canary Singles - Search Members');
 	}
   
   /**
@@ -389,4 +389,5 @@ class UsersController extends AppController {
 	public function upgrade() {
 		$this->set('title_for_layout', 'Canary Singles');
 	}
+	
 }

@@ -29,4 +29,17 @@ class FriendHelper extends AppHelper {
     }
     return false;
   }
+	
+	/**
+   * Determines if the user is subscribed.
+   *
+   * @param id the id of the user to check
+   */
+  public function user_not_subscribed($id) {
+		$user = $this->User->read(NULL, $id);
+		if ($user['User']['subscribed'] != "yes") {
+			return TRUE;
+		}
+    return FALSE;
+  }
 }
