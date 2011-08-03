@@ -3,6 +3,7 @@
     <li><?php echo $this->Html->link('Home', array('controller'=>'pages', 'action'=>'index'))?></li>
     <li><?php echo $this->Html->link('Search', array('controller'=>'users', 'action'=>'index'))?></li>
     <?php if ($logged_in): ?>
+    <?php if (!$is_not_subscribed): ?>
     <li>
       <?php echo $this->Html->link('Friends', array('controller'=>'users', 'action'=>'friends'))?>
       <ul>
@@ -10,6 +11,7 @@
         <li><?php echo $this->Html->link('Friend Requests', array('controller'=>'users', 'action'=>'friend_requests'))?></li>
       </ul>
     </li>
+    <?php endif; ?>
     <li>
       <?php echo $this->Html->link('Account', array('controller'=>'users', 'action'=>'account'))?>
       <ul>
@@ -21,9 +23,11 @@
         <?php endif; ?>
       </ul>
     </li>
+    <?php if (!$is_not_subscribed): ?>
     <li>
       <?php echo $this->Html->link('Messages', array('controller'=>'messages', 'action'=>'index')); ?>
     </li>
+    <?php endif; ?>
     <li>
       <?php echo $this->Html->link('Chirps', array('controller'=>'chirps', 'action'=>'view')); ?>
     </li>
