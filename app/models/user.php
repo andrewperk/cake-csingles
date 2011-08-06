@@ -66,6 +66,10 @@ class User extends AppModel {
         'rule'=>'matchPasswords',
         'message'=>'The passwords do not match.'
       )
+    ),
+    'ToS'=>array(
+    	'rule'=>'/1/',
+    	'message'=>'You must agree to the terms of service.'
     )
   );
 

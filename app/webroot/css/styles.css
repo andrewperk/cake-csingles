@@ -243,11 +243,15 @@ input {
   color: #fff968;
 }
 
+#mid-banner a:link, #mid-banner a:visited {
+	color: #CB9C43;
+}
+
 /* ----- mid-banner registration form styles ----- */
 
 #mid-banner form {
 	position: absolute;
-	top: 15px;
+	top: 10px;
 	left: 450px;
 	color: #fff;
 	font-size: 90%;
@@ -444,6 +448,20 @@ input {
 #main-content fieldset#search-users label {
 	display: inline;
 	margin: 0 3px 0 10px;
+}
+
+/* Form terms of service */
+
+#main-content form #UserToS {
+	width: 20px;
+}
+
+#main-content form label.tos {
+	display: inline;
+}
+
+p#tos {
+	margin-bottom: 5px;
 }
 
 /* ----- Form errors ---- */
@@ -748,6 +766,18 @@ fieldset .user-sidebar {
 	padding-top: 25px;
 }
 
+#footer a:link, #footer a:visited {
+	color: #00f;
+	text-decoration: none;
+	border-bottom: 1px dotted #00f;
+}
+
+#footer a:hover, #footer a:active {
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
+}
+
 /* --- User navigation in sidebar --- */
 
 #user-nav {
@@ -798,6 +828,20 @@ fieldset .user-sidebar {
 	background-color: #890000;
 }
 
+/* ---- FAQ's questions and answers ---- */
+
+#main-content p.question {
+	font-weight: bold;
+	color: #000;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #000;
+}
+
+#main-content p.answer {
+	color: #333;
+}
+
+
 /* ----- Misc. ----- */
 .float-left {
   float: left;
@@ -809,4 +853,14 @@ fieldset .user-sidebar {
 	margin-top: -10px;
 	margin-bottom: 15px;
 	display: block;
+}
+
+.important_note {
+	background-color: #AA0000;
+	padding: 10px 10px 5px 10px;
+	margin-bottom: 20px;
+}
+
+.important_note p {
+		color: #fff !important;
 }

@@ -185,7 +185,8 @@ class UsersController extends AppController {
   public function add() {
     if (!empty($this->data)) {
       if ($this->User->save($this->data)) {        
-        $this->Session->setFlash('Thanks for registering. You can now login and update your profile and avatar.', 'default', array('class'=>'success'));
+        $this->Session->setFlash('You are now a member of Canary Singles. Now you can login, create your profile, add an avatar, and search for other canaries.
+', 'default', array('class'=>'success'));
         $this->redirect(array('action'=>'login'));          
       }
       else {

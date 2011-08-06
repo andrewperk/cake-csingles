@@ -1,6 +1,9 @@
 <div id="main-nav">
   <ul>
     <li><?php echo $this->Html->link('Home', array('controller'=>'pages', 'action'=>'index'))?></li>
+    <li>
+      <?php echo $this->Html->link('FAQ\'s', array('controller'=>'pages', 'action'=>'faqs')); ?>
+    </li>
     <li><?php echo $this->Html->link('Search', array('controller'=>'users', 'action'=>'index'))?></li>
     <?php if ($logged_in): ?>
     <?php if (!$is_not_subscribed): ?>

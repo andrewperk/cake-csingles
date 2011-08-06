@@ -86,4 +86,12 @@ class PagesController extends AppController {
   public function index() {
     $this->set('title_for_layout', 'Canary Singles');
   }
+	
+	public function tos() {
+    $this->set('title_for_layout', 'Canary Singles - Terms of Service');
+  }
+	
+	public function faqs() {
+    $this->set('title_for_layout', 'Canary Singles - Frequently Asked Questions');
+  }
 }

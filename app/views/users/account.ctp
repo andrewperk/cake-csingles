@@ -5,6 +5,14 @@
   </small>
 </h2>
 
+<div class="important_note">
+	<p>Do not include email addresses or phone numbers in your Profile Information(ex. description etc.). They will be removed. 
+			If you violate this rule repeatedly, your membership will be cancelled.</p>
+
+	<p>If you want to share your phone number or email address, this should be done through the messages system, 
+	which is available only after upgrading to a premium membership.</p>
+</div>
+
 <?php echo $this->Form->create('User', array('action'=>'account')); ?>
 <div id="personal-info">
   <fieldset>
@@ -13,6 +21,9 @@
     <p><?php echo $this->Form->input('firstname', array('div'=>FALSE)); ?></p>
     <p><?php echo $this->Form->input('lastname', array('div'=>FALSE)); ?></p>
     <p><?php echo $this->Form->input('email', array('div'=>FALSE)); ?></p>
+    <p class="help">
+    	(Not publicly displayed.)
+    </p>
     <p><?php echo $this->Form->input('password', array('div'=>FALSE)); ?></p>
     <p><?php echo $this->Form->input('password_confirmation', array('div'=>FALSE, 'type'=>'password')); ?></p>
   </fieldset>
