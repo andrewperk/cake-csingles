@@ -309,7 +309,7 @@ class UsersController extends AppController {
 			// Make sure the friend being requested is a paid subscriber
 			if ($this->friendIsNotSubscribed($friend_id)) {
 				$this->Session->setFlash('Friendships can only occur between premium paid members.', 'default', array('class'=>'error'));
-				$this->redirect(array('controller'=>'messages', 'action'=>'chirp', $friend_id));
+				$this->redirect(array('controller'=>'chirps', 'action'=>'chirp', $friend_id));
 			}
 			
       // Cant be friends with their self

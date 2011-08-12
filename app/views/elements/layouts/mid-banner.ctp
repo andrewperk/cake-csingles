@@ -9,10 +9,6 @@
 		</ol>
 	</div>
 		<?php echo $this->Form->create('User', array('controller'=>'users', 'action'=>'add'));?>
-		<p><?php echo $this->Form->label('User.firstname', 'First Name: '); ?>
-		<?php echo $this->Form->text('User.firstname'); ?></p>
-		<p><?php echo $this->Form->label('User.lastname', 'Last Name: '); ?>
-		<?php echo $this->Form->text('User.lastname'); ?></p>
 		<p><?php echo $this->Form->label('User.username', 'Username: '); ?>
 		<?php echo $this->Form->text('User.username'); ?></p>
 		<p><?php echo $this->Form->label('User.email', 'Email: '); ?>

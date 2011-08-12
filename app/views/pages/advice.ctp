@@ -1,3 +1,3 @@
-<h1>Terms of Service</h1>
+<h1>Advice</h1>
 
 <p>Not yet implemented.</p>

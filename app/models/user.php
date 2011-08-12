@@ -13,18 +13,6 @@ class User extends AppModel {
   );
   
   public $validate = array(
-    'firstname'=>array(
-      'Not Empty'=>array(
-        'rule'=>'notEmpty',
-        'message'=>'Please enter your first name.'
-      )
-    ),
-    'lastname'=>array(
-      'Not Empty'=>array(
-        'rule'=>'notEmpty',
-        'message'=>'Please enter your last name.'
-      )  
-    ),
     'username'=>array(
       'Not Empty'=>array(
         'rule'=>'notEmpty',

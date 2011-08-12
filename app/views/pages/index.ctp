@@ -18,10 +18,9 @@ life partner who shares our lifestyle is a very difficult task indeed.</p>
 other canarys for friendship, dating, companionship, activity
 partners, romance or pen pals.</p>
 
-<h2>Our canaries share the following characteristics:</h2>
+<h2>Canaries Have the Following Characteristics</h2>
 
 <ul>
-
 <li>A health condition that is the result of or impacted by environmental toxins</li>
 
 <li>Live a green or environmentally conscious lifestyle of the most extreme</li>
@@ -37,10 +36,18 @@ partners, romance or pen pals.</p>
 <li>Respect and enjoy Mother Earth and time with nature.</li>
 </ul>
 
+<h2>How it Works</h2>
 
-<p>It's free to register, post a profile and search, pay only when you
-want to connect.</p>
+<p>It's Free to register, post a profile and search, pay only when you want to connect.</p>
 
-<p>Three affordable options that fit everyone's budget.</p>
+<ul>
+<li>1. Register for a Free membership</li>
 
-<p>Become a Member Today!</p>
+<li>2. Add a profile for Free</li>
+
+<li>3. Search for other Canaries for Free</li>
+
+<li>4. Upgrade to an affordable premium membership when you're ready to connect</li>
+</ul>
+
+<p class="bold"><?php echo $this->Html->link('Register Today', array('controller'=>'users', 'action'=>'add')); ?> - It's Free!.</p>

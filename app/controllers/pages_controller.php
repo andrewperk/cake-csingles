@@ -94,4 +94,8 @@ class PagesController extends AppController {
 	public function faqs() {
     $this->set('title_for_layout', 'Canary Singles - Frequently Asked Questions');
   }
+
+	public function advice() {
+		$this->set('title_for_layout', 'Canary Singles - Advice');
+	}
 }
