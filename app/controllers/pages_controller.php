@@ -96,6 +96,10 @@ class PagesController extends AppController {
   }
 
 	public function advice() {
+		if ($this->isNotSubscribed()) {
+			$this->Session->setFlash('You must upgrade your account to get advice.', 'default', array('class'=>'error'));
+			$this->redirect(array('controller'=>'users', 'action'=>'upgrade'));
+		}
 		$this->set('title_for_layout', 'Canary Singles - Advice');
 	}
 }

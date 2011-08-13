@@ -103,9 +103,9 @@ class AppController extends Controller {
 	}
 	
 	/**
-	 * Checks if the logged in user is not a paid subscriber.
+	 * Checks if the logged in user is not a premium member/subscriber.
 	 * 
-	 * @return boolean true if not a subscriber
+	 * @return boolean true if not a premium member/subscriber
 	 */
 	protected function isNotSubscribed() {
 		$user = ClassRegistry::init('User')->findById($this->Auth->user('id'));
