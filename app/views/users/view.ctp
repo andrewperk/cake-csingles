@@ -38,10 +38,48 @@
         <?php endif; ?>
       </td>
     </tr>
+    <tr>
+      <td class="label">State: </td>
+      <td>
+        <?php if($user['User']['state']): ?>
+        <?php echo strtoupper($user['User']['state']); ?>
+        <?php else: ?>
+        None
+        <?php endif; ?>
+      </td>
+    </tr>
+  </table>
+  
+  <h6>Description</h6>
+  <table class="description">
+    <tr>
+      <td class="label">Description: </td>
+      <td>
+        <?php if($user['User']['desc']): ?>
+        <?php echo $user['User']['desc']; ?>
+        <?php else: ?>
+        None
+        <?php endif; ?>
+      </td>
+    </tr>
+  </table>
+  
+  <h6>Interests</h6>
+  <table class="interests">
+    <tr>
+      <td class="label">Interests: </td>
+      <td>
+        <?php if($user['User']['interests']): ?>
+        <?php echo $user['User']['interests']; ?>
+        <?php else: ?>
+        None
+        <?php endif; ?>
+      </td>
+    </tr>
   </table>
   
   <h6>Health Conditions</h6>
-  <table class="healt_cond">    
+  <table class="health_cond">    
     <tr>
       <td class="label">Health Conditions: </td>
       <td>
@@ -57,30 +95,6 @@
       <td>
         <?php if($user['User']['sensitivity_level']): ?>
         <?php echo $user['User']['sensitivity_level']; ?>
-        <?php else: ?>
-        None
-        <?php endif; ?>
-      </td>
-    </tr>
-  </table>
-  
-  <h6>Interests</h6>
-  <table class="interests">
-    <tr>
-      <td class="label">Description: </td>
-      <td>
-        <?php if($user['User']['desc']): ?>
-        <?php echo $user['User']['desc']; ?>
-        <?php else: ?>
-        None
-        <?php endif; ?>
-      </td>
-    </tr>
-    <tr>
-      <td class="label">Interests: </td>
-      <td>
-        <?php if($user['User']['interests']): ?>
-        <?php echo $user['User']['interests']; ?>
         <?php else: ?>
         None
         <?php endif; ?>

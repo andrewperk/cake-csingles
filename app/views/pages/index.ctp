@@ -15,7 +15,7 @@ illness knows, meeting people, finding fulfilling friendships or a
 life partner who shares our lifestyle is a very difficult task indeed.</p>
 
 <p>Canary Singles provides a personal ads network where you can meet
-other canarys for friendship, dating, companionship, activity
+other Canaries for friendship, dating, companionship, activity
 partners, romance or pen pals.</p>
 
 <h2>Canaries Have the Following Characteristics</h2>

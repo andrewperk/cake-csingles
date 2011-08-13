@@ -20,10 +20,13 @@
     <p>Note: You must enter a password and confirm it to approve your changes.</p><br />
     <p><?php echo $this->Form->input('firstname', array('div'=>FALSE)); ?></p>
     <p><?php echo $this->Form->input('lastname', array('div'=>FALSE)); ?></p>
-    <p><?php echo $this->Form->input('email', array('div'=>FALSE)); ?></p>
-    <p class="help">
+    <p>
+    	<?php echo $this->Form->label('email'); ?>
+    	<span class="help">
     	(Not publicly displayed.)
-    </p>
+    	</span>
+    	<?php echo $this->Form->text('email', array('div'=>FALSE)); ?>
+  	</p>
     <p><?php echo $this->Form->input('password', array('div'=>FALSE)); ?></p>
     <p><?php echo $this->Form->input('password_confirmation', array('div'=>FALSE, 'type'=>'password')); ?></p>
   </fieldset>
@@ -32,22 +35,31 @@
   <fieldset>
     <legend>Profile Information</legend>
     <p><?php echo $this->Form->input('headline', array('div'=>FALSE, 'label'=>'Headline')); ?></p>
-    <p><?php echo $this->Form->input('desc', array('div'=>FALSE, 'label'=>'Describe Yourself')); ?></p>
-    <p class="help">(What you are seeking from a relationship? What is important and acceptable to you? What type of 
+    <p>
+    	<?php echo $this->Form->label('desc', 'Describe Yourself'); ?>
+    	<span class="help">(What you are seeking from a relationship? What is important and acceptable to you? What type of 
     	personality, appearance and outlook on life do you prefer? Where would you prefer they live? 
     	What about values, morals and intellect? Children? Are your children grown? What interests, 
     	hobbies, life goals do you want to share? Are you willing to relocate? What is completely unacceptable to you? 
-    	Are you looking for friends, romance, nesting etc.)</p>
-    <p><?php echo $this->Form->input('interests', array('div'=>FALSE)); ?></p>
-    <p class="help">
+    	Are you looking for friends, romance, nesting etc.)</span>
+    	<?php echo $this->Form->textarea('desc', array('div'=>FALSE, 'rows'=>'6', 'cols'=>'30')); ?>
+    </p>
+    <p>
+    	<?php echo $this->Form->label('interests'); ?>
+    	<span class="help">
     	(Examples: nature, music, meditation, yoga, organic gardening, reading, watching movies, daily walks, 
     	current events, Internet/computers, sports, birdwatching, writing, politics, intellectual conversation, 
     	nutrition, alternative health, cooking, arts, etc.)
-    </p>
-    <p><?php echo $this->Form->input('health_cond', array('div'=>FALSE, 'label'=>'Health Conditions')); ?></p>
-    <p class="help">
+    	</span>
+    	<?php echo $this->Form->textarea('interests', array('div'=>FALSE, 'cols'=>'30', 'rows'=>'6')); ?>
+  	</p>
+    <p>
+    	<?php echo $this->Form->label('health_cond', 'Healthh Conditions'); ?>
+    	<span class="help">
     	(MCS, EMF, Gulf War Syndrome, Autism, Chronic Fatigue, Fibromyalgia etc)
-    </p>
+   		</span>
+    	<?php echo $this->Form->textarea('health_cond', array('div'=>FALSE, 'rows'=>'6', 'cols'=>'30')); ?>
+  	</p>
     <p><?php echo $this->Form->input('sensitivity_level', array('div'=>FALSE, 'options'=>array('Severe'=>'Severe', 'Moderate'=>'Moderate', 'Mild'=>'Mild'))); ?></p>
     <p><?php echo $this->Form->input('state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state')); ?></p>
     <p><?php echo $this->Form->input('gender', array('div'=>FALSE, 'options'=>array('male'=>'male', 'female'=>'female'))); ?></p>

@@ -852,9 +852,9 @@ fieldset .user-sidebar {
   display: block;
 }
 
-#main-content form p.help {
+#main-content form .help {
 	font-size: 11px;
-	margin-top: -10px;
+	margin-top: 10px;
 	margin-bottom: 15px;
 	display: block;
 }
