@@ -25,7 +25,7 @@ input {
 	margin: 20px auto;
 	background: url(../img/main-bg.jpg) repeat-y;
 	position: relative;
-	overflow: 100px;
+	overflow: hidden;
 }
 
 /* ----- header styles ----- */
@@ -445,6 +445,10 @@ input {
 
 #main-content ul.users li {
 	margin-bottom: 10px;
+}
+
+#main-content fieldset#search-users {
+	margin-top: 15px;
 }
 
 #main-content fieldset#search-users label {
@@ -868,4 +872,29 @@ fieldset .user-sidebar {
 
 .important_note p {
 		color: #fff !important;
+}
+
+/* forgot password div on login page */
+
+#forgot-password {
+	background-color: #ccc;
+	border: 1px solid #aaa;
+	padding: 10px;
+	font-size: 11px;
+	position: relative;
+	top: 150px;
+	left: 350px;
+	margin: 0;
+	width: 300px;
+}
+
+#forgot-password p {
+	margin: 0;
+	padding: 0;
+}
+
+#forgot-password-link {
+	position: absolute;
+	top: 54px;
+	left: 80px;
 }

@@ -215,4 +215,42 @@ class User extends AppModel {
 			return FALSE;
 		}
   }
+	
+	/**
+	 * Validate email address for password reset.
+	 * 
+	 * @param email the address to validate
+	 * @return boolean true if email validates
+	 */
+	public function validate_email($email) {
+		if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			return FALSE;
+		}
+		return TRUE;
+	}
+	
+	/**
+	 * Check the valid email address matches a registered user.
+	 * Return true if a user is found with the passed in email address.
+	 * 
+	 * @param email the email to check
+	 * @return boolean true if a user matched the email
+	 */
+	public function find_email_match($email) {
+		$user = $this->findByEmail(strtolower($email));
+		if (!empty($user)) {
+			return TRUE;
+		}
+		return FALSE;
+	}
+	
+	/**
+	 * Generate random password 8 characters long for password reset.
+	 * 
+	 * @return string random characters.
+	 */
+	public function generate_random_password() {
+		$characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		return substr(str_shuffle($characters), 0, 8);
+	}
 }

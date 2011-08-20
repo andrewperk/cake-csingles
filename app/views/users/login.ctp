@@ -1,3 +1,7 @@
+<div id="forgot-password">
+	<p>I have brain fog and 
+		<?php echo $this->Html->link('forgot my username/password', array('controller'=>'users', 'action'=>'resend_password')); ?></p>
+</div>
 <div id="login-fieldset">
 <fieldset>
   <legend>Login</legend>

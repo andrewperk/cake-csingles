@@ -2,6 +2,15 @@
 <html>
   <head>
     <?php echo $this->Html->charset(); ?>
+    <?php if (isset($no_follow_meta)): ?>
+    	<?php echo $no_follow_meta; ?>
+    <?php endif; ?>
+    <?php if (isset($description_meta)): ?>
+    	<?php echo $description_meta; ?>
+    <?php endif; ?>
+    <?php if (isset($keywords_meta)): ?>
+    	<?php echo $keywords_meta; ?>
+    <?php endif; ?>
     
     <title><?php echo $title_for_layout; ?></title>
 

@@ -19,7 +19,7 @@ class UsersController extends AppController {
   public function beforeFilter() {
     parent::beforeFilter();
 		$this->Auth->deny('index');
-    $this->Auth->allow('add', 'view');
+    $this->Auth->allow('add', 'view', 'resend_password');
     
     // If registering or editing user use model for password hashing.
     if ($this->action == 'add' || $this->action == 'edit') {
@@ -414,7 +414,55 @@ You will receive a confirmation email with your account details.
 	 * 
 	 */
 	public function upgrade() {
-		$this->set('title_for_layout', 'Canary Singles');
+		$this->set('title_for_layout', 'Canary Singles - Upgrade To Premium Membership');
+	}
+	
+	/**
+	 * Send user email with username and new password.
+	 */
+	public function resend_password() {
+		if (!empty($this->data)) {
+			// Validate Email address and make sure a user has this email
+			if ($this->User->validate_email($this->data['User']['email']) && 
+			    $this->User->find_email_match($this->data['User']['email'])) {
+			  
+				// Find the matched user by email address
+				$matchedUser = $this->User->findByEmail(strtolower($this->data['User']['email']));
+				
+				// If found user send email
+				if (!empty($matchedUser)) {
+					// Set the user to update their new password
+					$this->User->id = $matchedUser['User']['id'];
+					
+					// Generate new password and save it
+					$generated_password = $this->User->generate_random_password();
+					$this->User->saveField('password', $generated_password);
+					
+					// Send username and new password email
+					$this->Email->to = $matchedUser['User']['email'];
+					$this->Email->from = "Canary Singles <support@canarysingles.com>";
+					$this->Email->subject = "Your Username and Password Reset Instructions";
+					$this->Email->template = "resend_password";
+					$this->Email->sendAs = "text";
+					
+					$userData = array(
+						'username'=>$matchedUser['User']['username'],
+						'newPassword'=>$generated_password
+					);
+					
+					$this->set('user', $userData);
+					$this->Email->send();
+					
+					// Give flash message and redirect
+					$this->Session->setFlash('Reset instructions have been sent to the email address you entered.', 'default', array('class'=>'success'));
+					$this->redirect(array('controller'=>'pages', 'action'=>'index'));
+				}
+			}
+			else {
+				$this->Session->setFlash('Incorrect Email Address', 'default', array('class'=>'error'));
+			}
+		}
+		$this->set('title_for_layout', 'Canary Singles - Resend Username and Password');
 	}
 	
 }

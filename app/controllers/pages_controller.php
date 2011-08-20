@@ -84,7 +84,9 @@ class PagesController extends AppController {
 	}
   
   public function index() {
-    $this->set('title_for_layout', 'Canary Singles');
+  	$this->set('description_meta', '<meta name="description" content="Personal ads or online dating for the chemically injured. Meet other MCS singles." /> ');
+		$this->set('keywords_meta', '<meta name="keywords" content="Personal ads for MCS, Online dating for MCS, MCS Singles" /> ');
+    $this->set('title_for_layout', 'Canary Singles - Personal Ads for the Chemically Injured');
   }
 	
 	public function tos() {
@@ -104,6 +106,7 @@ class PagesController extends AppController {
 	}
 	
 	public function privacy_policy() {
+		$this->set('no_follow_meta', '<meta name="robots" content="noindex, nofollow">');
 		$this->set('title_for_layout', 'Canary Singles - Privacy Policy');
 	}
 }

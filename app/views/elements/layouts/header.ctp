@@ -22,6 +22,9 @@
 				<?php echo $this->Form->label('User.password', '&nbsp;'); ?>
 				<?php echo $this->Form->password('User.password', array('id'=>'login_password', 'value'=>'Password')); ?>
 			</p>
+			<p id="forgot-password-link">
+				<?php echo $this->Html->link('Forgot?', array('controller'=>'users', 'action'=>'resend_password')); ?>
+			</p>
 			<p>
 				<label for="login_button">&nbsp;</label>
 				<?php echo $this->Form->submit('Login', array('id'=>'login_button', 'class'=>'button', 'div'=>FALSE)); ?>
