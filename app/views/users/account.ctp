@@ -16,10 +16,10 @@
 <?php echo $this->Form->create('User', array('action'=>'account')); ?>
 <div id="personal-info">
   <fieldset>
-    <legend>Edit Personal Information</legend>
+    <legend>Edit Personal Info</legend>
     <p>Note: You must enter a password and confirm it to approve your changes.</p><br />
-    <p><?php echo $this->Form->input('firstname', array('div'=>FALSE)); ?></p>
-    <p><?php echo $this->Form->input('lastname', array('div'=>FALSE)); ?></p>
+    <p><?php echo $this->Form->input('firstname', array('div'=>FALSE, 'label'=>'First Name')); ?></p>
+    <p><?php echo $this->Form->input('lastname', array('div'=>FALSE, 'label'=>'Last Name')); ?></p>
     <p>
     	<?php echo $this->Form->label('email'); ?>
     	<span class="help">
@@ -54,7 +54,7 @@
     	<?php echo $this->Form->textarea('interests', array('div'=>FALSE, 'cols'=>'30', 'rows'=>'6')); ?>
   	</p>
     <p>
-    	<?php echo $this->Form->label('health_cond', 'Healthh Conditions'); ?>
+    	<?php echo $this->Form->label('health_cond', 'Health Conditions'); ?>
     	<span class="help">
     	(MCS, EMF, Gulf War Syndrome, Autism, Chronic Fatigue, Fibromyalgia etc)
    		</span>

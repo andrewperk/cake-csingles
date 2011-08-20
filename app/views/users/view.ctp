@@ -16,7 +16,14 @@
   <h6>Basic Information</h6>
   <table class="info">
     <tr>
-      <td class="label">Name: </td><td><?php echo $user['User']['firstname']; ?> <?php echo $user['User']['lastname']; ?></td>
+      <td class="label">Name: </td>
+      <td>
+      	<?php if($user['User']['firstname']): ?>
+      		<?php echo $user['User']['firstname']; ?> <?php echo $user['User']['lastname']; ?>
+      	<?php else: ?>
+      		N/A
+      	<?php endif; ?>
+      </td>
     </tr>
     <tr>
       <td class="label">Gender: </td>
