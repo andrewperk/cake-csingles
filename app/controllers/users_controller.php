@@ -5,6 +5,7 @@ class UsersController extends AppController {
   public $paginate = array(
     'limit'=>'10'
   );
+	public $components = array('Email');
   
   /**
    * Initialize the pages that are allowed by the auth 
@@ -191,7 +192,23 @@ class UsersController extends AppController {
    */
   public function add() {
     if (!empty($this->data)) {
-      if ($this->User->save($this->data)) {        
+      if ($this->User->save($this->data)) {
+        
+				// Send Email
+				$this->Email->to = $this->data['User']['email'];
+				$this->Email->from = "Canary Singles <support@canarysingles.com>";
+				$this->Email->subject = "Welcome to Canary Singles";
+				$this->Email->template = "register_email";
+				$this->Email->sendAs = "text";
+				
+				$newUser = array(
+					'username'=>$this->data['User']['username'],
+					'password'=>$this->data['User']['password_confirmation']
+				);
+				
+				$this->set('newUser', $newUser);
+				$this->Email->send();
+				
         $this->Session->setFlash('Registration Successful. <br /><br /> You are now a member of Canary Singles. <br /><br /> Now you can login, create your profile and search for other Canaries.
 
 You will receive a confirmation email with your account details.
