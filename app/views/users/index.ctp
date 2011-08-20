@@ -65,6 +65,9 @@
 			<?php endif; ?>
 		<?php endif; ?>
 		<?php echo $this->Html->link('View Profile', array('controller'=>'users', 'action'=>'view', $user['User']['id'])); ?>
+		<?php if ($is_admin): ?>
+			| <?php echo $this->Html->link('Delete User', array('controller'=>'users', 'action'=>'delete', $user['User']['id']), NULL, 'Are you sure you want to delete this user?'); ?>
+		<?php endif; ?>
 </div> 
 <?php endforeach; ?>
 

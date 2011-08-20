@@ -111,6 +111,12 @@ class UsersController extends AppController {
   public function index() {
   	// Searching users
   	if (!empty($this->data)) {
+  		
+  		// If name, gender, and state are empty
+  		if (empty($this->data['User']['search_name']) && empty($this->data['User']['search_gender']) && empty($this->data['User']['search_state'])) {
+  			$this->paginate = array('limit'=>'10', 'order'=>'User.username');
+    		$this->set('users', $this->paginate('User'));
+  		}
   		// By name, gender, and state
   		if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_gender']) && !empty($this->data['User']['search_state'])) {
   			$this->paginate = array('conditions' => array('OR'=>array(
@@ -120,7 +126,7 @@ class UsersController extends AppController {
 					'AND'=>array(
 					'User.gender'=>$this->data['User']['search_gender'],
 					'User.state'=>$this->data['User']['search_state'])
-				));
+				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			// by name and gender
 			else if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_gender'])) {
@@ -130,7 +136,7 @@ class UsersController extends AppController {
 					'User.lastname LIKE' => '%'.$this->data['User']['search_name'].'%'),
 					'AND'=>array(
 					'User.gender'=>$this->data['User']['search_gender'])
-				));
+				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			// by name and state
 			else if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_state'])) {
@@ -140,14 +146,14 @@ class UsersController extends AppController {
 					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%'),
 					'AND'=>array(
 					'User.state'=>$this->data['User']['search_state'])
-				));
+				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			// by gender and state
 			else if (!empty($this->data['User']['search_gender']) && !empty($this->data['User']['search_state'])) {
   			$this->paginate = array('conditions' => array(
 					'User.gender' => $this->data['User']['search_gender'],
 					'User.state'=>$this->data['User']['search_state']
-				));
+				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			// by name
 			else if (!empty($this->data['User']['search_name'])) {
@@ -155,25 +161,26 @@ class UsersController extends AppController {
 					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
 					'User.firstname LIKE' => '%'.$this->data['User']['search_name'],
 					'User.lastname LIKE' => '%'.$this->data['User']['search_name'])
-				));
+				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			// by gender
 			else if (!empty($this->data['User']['search_gender'])) {
   			$this->paginate = array('conditions' => array(
 					'User.gender' => $this->data['User']['search_gender']
-				));
+				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			// by state
 			else if (!empty($this->data['User']['search_state'])) {
   			$this->paginate = array('conditions' => array(
 					'User.state' => $this->data['User']['search_state']
-				));
+				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			$results = $this->paginate('User');
 			$this->set('users', $results);
 		}
 		// Default retrieval of all users
 		else {
+			$this->paginate = array('limit'=>'10', 'order'=>'User.username');
     	$this->set('users', $this->paginate('User'));
   	}
 		$this->set('title_for_layout', 'Canary Singles - Search Members');
