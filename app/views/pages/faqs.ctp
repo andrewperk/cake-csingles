@@ -1,5 +1,22 @@
 <h1>Frequently Asked Questions</h1>
 
+<p class="question">What is the difference between a Free membership and a Premium membership?</p>
+
+<p class="answer">A free membership allows you to register, post your profile and search the database.</p>
+
+<p class="answer">A premium membership allows you to register, post your profiles, search the database, 
+	send chirps to non premium members, communicate with other premium members and access the relationship advice center.</p>
+
+<p class="question">How do I get a free membership?</p>
+
+<p class="answer">You register for an account.</p>
+
+<p class="question">What is a Chirp?</p>
+
+<p class="answer">A chirp is a simple notification that premium members can send to non premium 
+	members to let them know they are interested in getting to know them. This allows the non 
+	premium member to decide to upgrade to a premium membership, if they desire to interact.</p>
+
 <p class="question">How can I contact other members?</p>
 
 <p class="answer">Premium members will have access to a personal messaging system within Canary Singles where they can send and 
@@ -13,7 +30,7 @@ receive messages from other premium members. You must upgrade your account to a 
 	
 <p class="question">How much does premium membership cost?</p>
 
-<p class="answer">19.95 for 3 Months. Billed every 3 months.</p>
+<p class="answer">19.99 for 3 Months.</p>
 	
 <p class="question">What payment methods do you accept?</p>
 

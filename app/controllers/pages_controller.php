@@ -102,4 +102,8 @@ class PagesController extends AppController {
 		}
 		$this->set('title_for_layout', 'Canary Singles - Advice');
 	}
+	
+	public function privacy_policy() {
+		$this->set('title_for_layout', 'Canary Singles - Privacy Policy');
+	}
 }

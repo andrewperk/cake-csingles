@@ -9,7 +9,7 @@ class AppController extends Controller {
    * Checks for different states of users: logged in, admin etc..
    */
   public function beforeFilter() {
-    $this->Auth->allow('index', 'tos', 'faqs');
+    $this->Auth->allow('index', 'tos', 'faqs', 'privacy_policy');
     $this->Auth->logoutRedirect = array('controller'=>'pages', 'action'=>'index');
     $this->Auth->loginError = "Incorrect username/password combination.";
     $this->Auth->authError = "Please login.";
