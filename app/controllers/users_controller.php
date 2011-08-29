@@ -115,7 +115,7 @@ class UsersController extends AppController {
   		
   		// If name, gender, and state are empty
   		if (empty($this->data['User']['search_name']) && empty($this->data['User']['search_gender']) && empty($this->data['User']['search_state'])) {
-  			$this->paginate = array('limit'=>'10', 'order'=>'User.username');
+  			$this->paginate = array('conditions'=>array('visible'=>1), 'limit'=>'10', 'order'=>'User.username');
     		$this->set('users', $this->paginate('User'));
   		}
   		// By name, gender, and state
@@ -125,6 +125,7 @@ class UsersController extends AppController {
 					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%',
 					'User.lastname LIKE' => '%'.$this->data['User']['search_name'].'%'),
 					'AND'=>array(
+					'visible'=>1,
 					'User.gender'=>$this->data['User']['search_gender'],
 					'User.state'=>$this->data['User']['search_state'])
 				), 'limit'=>'10', 'order'=>'User.username');
@@ -136,6 +137,7 @@ class UsersController extends AppController {
 					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%',
 					'User.lastname LIKE' => '%'.$this->data['User']['search_name'].'%'),
 					'AND'=>array(
+					'visible'=>1,
 					'User.gender'=>$this->data['User']['search_gender'])
 				), 'limit'=>'10', 'order'=>'User.username');
   		}
@@ -146,19 +148,21 @@ class UsersController extends AppController {
 					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%',
 					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%'),
 					'AND'=>array(
+					'visible'=>1,
 					'User.state'=>$this->data['User']['search_state'])
 				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			// by gender and state
 			else if (!empty($this->data['User']['search_gender']) && !empty($this->data['User']['search_state'])) {
   			$this->paginate = array('conditions' => array(
+  				'visible'=>1,
 					'User.gender' => $this->data['User']['search_gender'],
 					'User.state'=>$this->data['User']['search_state']
 				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			// by name
 			else if (!empty($this->data['User']['search_name'])) {
-  			$this->paginate = array('conditions' => array('OR'=>array(
+  			$this->paginate = array('conditions' => array('visible'=>1, 'OR'=>array(
 					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
 					'User.firstname LIKE' => '%'.$this->data['User']['search_name'],
 					'User.lastname LIKE' => '%'.$this->data['User']['search_name'])
@@ -167,12 +171,14 @@ class UsersController extends AppController {
 			// by gender
 			else if (!empty($this->data['User']['search_gender'])) {
   			$this->paginate = array('conditions' => array(
+  				'visible'=>1,
 					'User.gender' => $this->data['User']['search_gender']
 				), 'limit'=>'10', 'order'=>'User.username');
   		}
 			// by state
 			else if (!empty($this->data['User']['search_state'])) {
   			$this->paginate = array('conditions' => array(
+  				'visible'=>1,
 					'User.state' => $this->data['User']['search_state']
 				), 'limit'=>'10', 'order'=>'User.username');
   		}
@@ -181,7 +187,7 @@ class UsersController extends AppController {
 		}
 		// Default retrieval of all users
 		else {
-			$this->paginate = array('limit'=>'10', 'order'=>'User.username');
+			$this->paginate = array('conditions'=>array('visible'=>1), 'limit'=>'10', 'order'=>'User.username');
     	$this->set('users', $this->paginate('User'));
   	}
 		$this->set('title_for_layout', 'Canary Singles - Search Members');
@@ -320,6 +326,7 @@ You will receive a confirmation email with your account details.
   public function friends() {
     $user_id = $this->Auth->user('id');
     $friends = $this->User->get_friends($user_id);
+		$this->set('title_for_layout', 'Canary Singles - Friends');
     $this->set('friends', $friends);
   }
   
@@ -463,6 +470,46 @@ You will receive a confirmation email with your account details.
 			}
 		}
 		$this->set('title_for_layout', 'Canary Singles - Resend Username and Password');
+	}
+
+	/**
+	 * Deactivates a users account by making them not visible.
+	 * Does not stop paypal subscription yet. User does manually through Paypal account.
+	 */
+	public function deactivate_account() {
+		$current_user = $this->current_user();
+		
+		if ($current_user['User']['visible'] == 0) {
+			$this->redirect(array('action'=>'reactivate_account'));
+		}
+		
+		if (!empty($this->data) && $this->data['User']['deactivate'] == 'deactivate') {
+			$this->User->id = $this->Auth->user('id');
+			$this->User->saveField('visible', 0);
+			$this->Session->setFlash('Your account has been deactivated. Remember, if you have a premium paid membership to also cancel it inside of your Paypal account as well in order to stop future billing.', 'default', array('class'=>'success'));
+			$this->redirect(array('action'=>'account'));
+		}
+		$this->set('title_for_layout', 'Canary Singles - Deactivate Account');
+	}
+	
+	/**
+	 * Reactivates a users account by making them visible.
+	 * Does not reinitialize Paypal subscription if they cancelled at Paypal. User will have to pay again.
+	 */
+	public function reactivate_account() {
+		$current_user = $this->current_user();
+		
+		if ($current_user['User']['visible'] == 1) {
+			$this->redirect(array('action'=>'account'));
+		}
+		
+		if (!empty($this->data) && $this->data['User']['reactivate'] == 'reactivate') {
+			$this->User->id = $this->Auth->user('id');
+			$this->User->saveField('visible', 1);
+			$this->Session->setFlash('Your account has been reactivated.', 'default', array('class'=>'success'));
+			$this->redirect(array('action'=>'account'));
+		}
+		$this->set('title_for_layout', 'Canary Singles - Reactivate Account');
 	}
 	
 }

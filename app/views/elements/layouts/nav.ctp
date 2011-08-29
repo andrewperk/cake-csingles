@@ -23,6 +23,11 @@
         <li><?php echo $this->Html->link('Edit Account', array('controller'=>'users', 'action'=>'account'))?></li>
         <li><?php echo $this->Html->link('View Profile', array('controller'=>'users', 'action'=>'view', $current_user['User']['id']))?></li>
         <li><?php echo $this->Html->link('Avatar', array('controller'=>'avatars', 'action'=>'add'))?></li>
+        <?php if ($current_user['User']['visible']): ?>
+        	<li><?php echo $this->Html->link('Deactivate', array('controller'=>'users', 'action'=>'deactivate_account')); ?></li>
+        <?php else: ?>
+        	<li><?php echo $this->Html->link('Reactivate', array('controller'=>'users', 'action'=>'reactivate_account')); ?></li>
+        <?php endif; ?>
         <?php 
         // If they are not a premium member
         if($is_not_subscribed): ?>

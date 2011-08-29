@@ -74,7 +74,7 @@ class AppController extends Controller {
    */
   protected function current_user() {
     if ($this->logged_in()) {
-			return $this->Auth->user();
+			return ClassRegistry::init('User')->findById($this->Auth->user('id'));
     }
   }
   

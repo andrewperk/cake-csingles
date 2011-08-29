@@ -96,10 +96,10 @@ class User extends AppModel {
     for ($i = 0; $i < sizeof($friends_list); $i++) {
       $friends_ids[$i] = $friends_list[$i]['UsersUser']['friend_id'];
     }
-    // $friends = array();
+
     for ($j = 0; $j < sizeof($friends_ids); $j++) {
       $this->recursive = 0;
-      $friends[$j] = $this->findAllById($friends_ids[$j], array('User.id', 'User.username', 'Avatar.avatar'));
+      $friends[$j] = $this->findAllById($friends_ids[$j], array('User.id', 'User.username', 'User.visible', 'Avatar.avatar'));
     }
     return $friends;
   }

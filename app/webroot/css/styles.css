@@ -456,6 +456,15 @@ input {
 	margin: 0 3px 0 10px;
 }
 
+#main-content form input#UserVisible {
+	width: 20px;
+}
+
+#main-content form #visible-tag label {
+	display: inline;
+	margin-right: 5px;
+}
+
 /* Form terms of service */
 
 #main-content form #UserToS {
