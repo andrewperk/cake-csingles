@@ -40,14 +40,14 @@ partners, romance or pen pals.</p>
 
 <p>It's Free to register, post a profile and search, pay only when you want to connect.</p>
 
-<ul>
-<li>1. Register for a Free membership</li>
+<ol>
+<li>Register for a Free membership</li>
 
-<li>2. Add a profile for Free</li>
+<li>Add a profile for Free</li>
 
-<li>3. Search for other Canaries for Free</li>
+<li>Search for other Canaries for Free</li>
 
-<li>4. Upgrade to an affordable premium membership when you're ready to connect</li>
-</ul>
+<li>Upgrade to an affordable premium membership when you're ready to connect</li>
+</ol>
 
 <p class="bold"><?php echo $this->Html->link('Register Today', array('controller'=>'users', 'action'=>'add')); ?> - It's Free!.</p>

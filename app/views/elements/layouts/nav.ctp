@@ -46,7 +46,7 @@
       <?php echo $this->Html->link('Chirps', array('controller'=>'chirps', 'action'=>'view')); ?>
     </li>
     <?php if (!$is_not_subscribed): ?>
-    	<li><?php echo $this->Html->link('Advice', array('controller'=>'pages', 'action'=>'advice')); ?></li>
+    	<li><?php echo $this->Html->link('Advice', array('controller'=>'advice', 'action'=>'index')); ?></li>
     <?php endif; ?>
     <li><?php echo $this->Html->link('Logout', array('controller'=>'users', 'action'=>'logout'))?></li>        
     <?php endif; ?>

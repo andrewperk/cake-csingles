@@ -17,6 +17,11 @@ input {
 	font-family: sans-serif; /* IE password field fix */
 }
 
+blockquote {
+	font-style: italic;
+	margin-left: 25px;
+}
+
 /* ----- container styles ----- */
 
 #container {

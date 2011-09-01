@@ -96,17 +96,10 @@ class PagesController extends AppController {
 	public function faqs() {
     $this->set('title_for_layout', 'Canary Singles - Frequently Asked Questions');
   }
-
-	public function advice() {
-		if ($this->isNotSubscribed()) {
-			$this->Session->setFlash('You must upgrade to the premium membership to access the relationship advice center.', 'default', array('class'=>'error'));
-			$this->redirect(array('controller'=>'users', 'action'=>'upgrade'));
-		}
-		$this->set('title_for_layout', 'Canary Singles - Advice');
-	}
 	
 	public function privacy_policy() {
 		$this->set('no_follow_meta', '<meta name="robots" content="noindex, nofollow">');
 		$this->set('title_for_layout', 'Canary Singles - Privacy Policy');
 	}
+
 }
