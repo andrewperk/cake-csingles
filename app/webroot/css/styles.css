@@ -79,7 +79,7 @@ input {
 	border: solid 1px #584711;
 	padding: 5px 5px 5px 10px;
 	-moz-border-radius: 5px;
-	-webkite-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 #login p.login {
@@ -92,7 +92,7 @@ input {
   border: solid 1px #584711;
   padding: 5px 5px 5px 10px;
   -moz-border-radius: 5px;
-  -webkite-border-radius: 5px;
+  -webkit-border-radius: 5px;
   text-align: center;
 }
 
@@ -135,8 +135,11 @@ input {
 	color: #fff;
 	height: 26px;
 	width: 78px;
-	margin-left: 75px;
 	cursor: pointer;
+}
+
+#login form p.login_button {
+	margin-left: 75px;
 }
 
 #content input.button {
@@ -224,7 +227,7 @@ input {
 #mid-banner {
 	height: 220px;
 	width: 744px;
-	background: url(../img/mid-banner-bg.png) repeat-x;
+	background: url(../img/mid-banner-bg.jpg) repeat-x;
 	float: left;
 	position: relative;
 }
@@ -274,10 +277,12 @@ input {
 	color: #fff;
 	height: 26px;
 	width: 78px;
-	margin-left: 75px;
 	cursor: pointer;
 }
 
+#mid-banner form p.register_button {
+	margin-left: 75px;
+}
 #mid-banner form input.button:hover {
 	color: #fff968;
 	cursor: pointer;
@@ -900,11 +905,6 @@ fieldset .user-sidebar {
 	left: 350px;
 	margin: 0;
 	width: 300px;
-}
-
-#forgot-password p {
-	margin: 0;
-	padding: 0;
 }
 
 #forgot-password-link {

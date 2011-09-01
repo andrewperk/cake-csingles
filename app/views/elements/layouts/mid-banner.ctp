@@ -22,7 +22,7 @@
   	<?php echo $this->Form->label('ToS', 'I agree to the ', array('class'=>'tos')); ?> 
     <?php echo $this->Html->link('Terms of Service', array('controller'=>'pages', 'action'=>'tos')); ?> 
   	</p> 
-		<p><label for="register_button">&nbsp;</label>
+		<p class="register_button"><label for="register_button">&nbsp;</label>
 		<?php echo $this->Form->submit('Register', array('id'=>'register_button', 'class'=>'button', 'div'=>FALSE)); ?></p>
 		<?php echo $this->Form->end(); ?>
 </div><!-- mid-banner -->
