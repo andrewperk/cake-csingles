@@ -1,5 +1,5 @@
 #header-content img, #header-content {
-	behavior: url('http://localhost/cake-csingles/iepngfix.htc');
+	/*behavior: url('http://localhost/cake-csingles/iepngfix.htc'); */
 }
 
 #header h1 {
@@ -8,11 +8,11 @@
 	text-indent: -9999em;
 	margin-top: 25px;
 	margin-left: 140px;
-	behavior: url('http://localhost/cake-csingles/iepngfix.htc');
+	/*behavior: url('http://localhost/cake-csingles/iepngfix.htc'); */
 }
 
 .button, #signup-process li {
-  behavior: url('http://localhost/cake-csingles/iepngfix.htc'); 
+  /*behavior: url('http://localhost/cake-csingles/iepngfix.htc'); */
 }
 
 #sidebar-content {
@@ -44,4 +44,21 @@ div.sidebarclass3 {
 	left: 757px; */
 	overflow: hidden;
 	margin-top: -30px;
+}
+
+/* Form terms of service */
+
+#main-content form #UserToS {
+	width: 30px;
+}
+
+#main-content form label.tos {
+	display: inline;
+	font-weight: 100;
+}
+
+p#tos {
+	margin-bottom: 10px;
+	margin-top: 5px;
+	font-weight: 100;
 }

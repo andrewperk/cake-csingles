@@ -523,7 +523,7 @@ p#tos {
 	margin-right: 5px;
 }
 
-/* ----- User profile styles ----- */
+/* ----- User Account profile styles ----- */
 #main-content .profile {
  clear: both;
 }
@@ -559,6 +559,10 @@ p#tos {
 
 #main-content #profile-header h2 {
   line-height: 90px;
+}
+
+#main-content small#profile-link {
+	font-size: 12px;
 }
 
 /* ----- Users Search ----- */
@@ -640,10 +644,11 @@ p#tos {
 	width: 60px;
 	height: 60px;
 	float: left;
+	margin-right: 10px;
 }
 
-.user-message .message-intro {
-	
+.user-message .message-intro p {
+	margin-top: -15px;
 }
 
 p.reply-link {
@@ -769,11 +774,11 @@ fieldset .user-sidebar {
 	clear: both;
 	overflow: hidden;
 	color: #fff;
-	font-family: Georgia, Garamon, serif;
+	font-family: Georgia, Garamond, serif;
 }
 
 #footer-content {
-	background: url(../img/bottom-corners.png) no-repeat bottom left;
+	background: url(../img/bottom-corners.jpg) no-repeat bottom left;
 	overflow: hidden;
 	height: 75px;
 }
@@ -906,4 +911,30 @@ fieldset .user-sidebar {
 	position: absolute;
 	top: 54px;
 	left: 80px;
+}
+
+#forgot-password-link a:link, #forgot-password-link a:visited {
+	color: #fff968;
+}
+
+#forgot-password-link a:hover, #forgot-password-link a:active {
+	color: #fff;
+}
+
+/* --- Chirp view page ---- */
+
+p.chirp {
+	width: 200px;
+	overflow: hidden;
+}
+p.chirp img {
+	float: left;
+	margin-right: 15px;
+}
+
+p.chirp a {
+	float: left;
+	text-align: left;
+	display: block;
+	margin-top: 35px;
 }

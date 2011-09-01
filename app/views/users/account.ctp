@@ -1,6 +1,6 @@
 <h2>
   <?php echo ucfirst($user['User']['username']); ?> 
-  <small>
+  <small id="profile-link">
     <?php echo $this->Html->link('(View Your Profile)', array('action'=>'view', $user['User']['id'])); ?>
   </small>
 </h2>
@@ -34,7 +34,11 @@
 <div id="profile-info">
   <fieldset>
     <legend>Profile Information</legend>
-    <p><?php echo $this->Form->input('headline', array('div'=>FALSE, 'label'=>'Headline')); ?></p>
+    <p>
+    	<?php echo $this->Form->label('headline', 'Headline'); ?>
+    	<span class="help">(Ex: Free spirited canary seeks partner to soar.)</span>
+    	<?php echo $this->Form->text('headline', array('div'=>FALSE)); ?>
+    	</p>
     <p>
     	<?php echo $this->Form->label('desc', 'Describe Yourself'); ?>
     	<span class="help">(What you are seeking from a relationship? What is important and acceptable to you? What type of 
