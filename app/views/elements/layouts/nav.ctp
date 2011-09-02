@@ -50,5 +50,6 @@
     <?php endif; ?>
     <li><?php echo $this->Html->link('Logout', array('controller'=>'users', 'action'=>'logout'))?></li>        
     <?php endif; ?>
+    <li><?php echo $this->Html->link('Contact', array('controller'=>'contact_messages', 'action'=>'send'))?></li>
   </ul>
 </div><!-- end main-nav -->
