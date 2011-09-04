@@ -43,13 +43,13 @@ blockquote {
 }
 
 #header-content {
-	background: url(../img/top-corners.png) no-repeat;
+	background: url(../img/top-corners.jpg) no-repeat;
 	height: 105px;
 	overflow: hidden;
 }
 
 #header h1 {
-	background: url(../img/logo.png) no-repeat;
+	background: url(../img/logo.jpg) no-repeat;
 	height: 46px;
 	text-indent: -9999em;
 	margin-top: 25px;
@@ -135,7 +135,10 @@ blockquote {
 }
 
 #login form input.button {
-	background: url(../img/register-button.png) no-repeat top left;
+	background-color: #5d4b13;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border: none;
 	color: #fff;
 	height: 26px;
@@ -148,7 +151,10 @@ blockquote {
 }
 
 #content input.button {
-  background: url(../img/register-button.png) no-repeat top left;
+	background-color: #5d4b13;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border: none;
 	color: #fff;
 	height: 26px;
@@ -160,7 +166,7 @@ blockquote {
 
 #main-nav {
 	clear: both;
-	background: url(../img/nav-bg.png) repeat-x;
+	background: url(../img/nav-bg.jpg) repeat-x;
 	width: 744px;
 	overflow: hidden;
 	height: 40px;
@@ -277,7 +283,10 @@ blockquote {
 }
 
 #mid-banner form input.button {
-	background: url(../img/register-button.png) no-repeat top left;
+	background-color: #5d4b13;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border: none;
 	color: #fff;
 	height: 26px;
@@ -299,7 +308,7 @@ blockquote {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	background: url(../img/signup-process-bg.png) repeat-x;
+	background-color: #5a4717;
 	color: #fff;
 }
 
@@ -310,7 +319,7 @@ blockquote {
 #signup-process li {
 	float: left;
 	padding: 5px 20px 0 0;
-	background: url(../img/number-bg.png) no-repeat;
+	background: url(../img/number-bg.jpg) no-repeat;
 	height: 45px;
 	margin-top: 6px;
 	padding-left: 15px;
@@ -444,7 +453,10 @@ blockquote {
 }
 
 #main-content input.button {
-  background: url(../img/register-button.png) no-repeat top left;
+	background-color: #5d4b13;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	border: none;
 	color: #fff;
 	height: 26px;

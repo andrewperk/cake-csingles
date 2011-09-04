@@ -1,8 +1,6 @@
-<h1>Relationship Advice Center</h1>
-(Collage of three photos, tilted to the side. on the left. On the right a collage of words below.)
-love, passion, desire, intimacy, communication, infidelity, sexuality, compatibility, negotiation, compromise, trust, respect, needs)<br /><br />
+<h1 style="text-align: center;">Relationship Advice Center</h1>
 
-mood, sex tips, hunting pics<br /><br />
+<?php echo $this->Html->image('advice/advice-banner.jpg', array('alt'=>'Relationship Advice Center')); ?><br /><br />
 
 <p>All advice and tips in the Relationship Advice Center are provided by the creator of Canary Singles, Cynthia Perkins, M.Ed. Cynthia is a holistic health counselor, sobriety coach and adult sex educator. She holds a bachelor's degree in psychology and a master's degree in counseling and is the author of numerous self-help books.</p> 
 

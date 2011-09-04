@@ -1,6 +1,6 @@
 <div id="header">
   <div id="header-content">
-    <?php echo $this->Html->image('canaries.png', array('alt'=>'Canary Singles', 'url'=>array('controller'=>'pages', 'action'=>'index'))); ?>
+    <?php echo $this->Html->image('canaries.jpg', array('alt'=>'Canary Singles', 'url'=>array('controller'=>'pages', 'action'=>'index'))); ?>
     <h1>Canary Singles</h1>
     <h3>&nbsp;</h3>
   </div>
