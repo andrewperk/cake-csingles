@@ -1,13 +1,15 @@
-<fieldset id="search-users">
-	<legend>Search Members</legend>
+<div id="search-users">
+	<h2>Search Members</h2>
 	<?php echo $this->Form->create('User'); ?>
-		<p><?php echo $this->Form->input('search_name', array('div'=>FALSE, 'label'=>'Name')); ?>
-		 <?php echo $this->Form->input('search_gender', array('div'=>FALSE, 'label'=>'Gender', 'options'=>array(''=>'', 'Male'=>'Male', 'Female'=>'Female'))); ?>
-		 <?php echo $this->Form->input('search_state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state', 'label'=>'State')); ?></p>
+		<p><?php echo $this->Form->input('search_name', array('div'=>FALSE, 'label'=>'Name')); ?></p>
+		 <p><?php echo $this->Form->input('search_gender', array('div'=>FALSE, 'label'=>'Gender', 'options'=>array(''=>'', 'Male'=>'Male', 'Female'=>'Female'))); ?></p>
+		 <p><?php echo $this->Form->input('search_state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state', 'label'=>'State')); ?></p>
+	<p>
 	<?php
 		echo $this->Form->submit('Search', array('class'=>'button'));
 	?>
-</fieldset>
+	</p>
+</div>
 <?php echo $this->Form->end(); ?>
 
 <div class="pagination">

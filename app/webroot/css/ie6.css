@@ -15,3 +15,12 @@
 	top: 60px;
 	left: 80px;
 }
+
+/* Form background styling */
+#personal-info, #profile-info, #login-fieldset, #register {
+	border: none;
+  background-color: #eee;
+  width: 690px;
+  padding: 10px;
+  margin-bottom: 25px;
+}

@@ -1,9 +1,9 @@
-<h2>
+<h1>
   <?php echo ucfirst($user['User']['username']); ?> 
   <small id="profile-link">
     <?php echo $this->Html->link('(View Your Profile)', array('action'=>'view', $user['User']['id'])); ?>
   </small>
-</h2>
+</h1>
 
 <div class="important_note">
 	<p>Do not include email addresses or phone numbers in your Profile Information(ex. description etc.). They will be removed. 
@@ -15,8 +15,7 @@
 
 <?php echo $this->Form->create('User', array('action'=>'account')); ?>
 <div id="personal-info">
-  <fieldset>
-    <legend>Edit Personal Info</legend>
+    <h2>Edit Personal Info</h2>
     <p>Note: You must enter a password and confirm it to approve your changes.</p><br />
     <p><?php echo $this->Form->input('firstname', array('div'=>FALSE, 'label'=>'First Name')); ?></p>
     <p><?php echo $this->Form->input('lastname', array('div'=>FALSE, 'label'=>'Last Name')); ?></p>
@@ -29,11 +28,9 @@
   	</p>
     <p><?php echo $this->Form->input('password', array('div'=>FALSE)); ?></p>
     <p><?php echo $this->Form->input('password_confirmation', array('div'=>FALSE, 'type'=>'password')); ?></p>
-  </fieldset>
 </div>
 <div id="profile-info">
-  <fieldset>
-    <legend>Profile Information</legend>
+    <h2>Profile Information</h2>
     <p>
     	<?php echo $this->Form->label('headline', 'Headline'); ?>
     	<span class="help">(Ex: Free spirited canary seeks partner to soar.)</span>
@@ -68,7 +65,6 @@
     <p><?php echo $this->Form->input('state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state')); ?></p>
     <p><?php echo $this->Form->input('gender', array('div'=>FALSE, 'options'=>array('male'=>'male', 'female'=>'female'))); ?></p>
     <p><?php echo $this->Form->input('age', array('div'=>FALSE)); ?></p>
-  </fieldset>
 </div>
 <p><?php echo $this->Form->submit('Update', array('div'=>FALSE, 'class'=>'button')); ?></p>
 <?php echo $this->Form->end(); ?>

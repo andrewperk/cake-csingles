@@ -1,5 +1,5 @@
-<fieldset>
-	<legend>Reactivate Account?</legend>
+<div id="reactivate-account">
+	<h1>Reactivate Account?</h1>
 	<?php echo $this->Form->create('User', array('action'=>'reactivate_account')); ?>
 		<p>
 			<span class="help">
@@ -10,4 +10,4 @@
 		</p>
 		<p><?php echo $this->Form->submit('Reactivate', array('div'=>FALSE, 'class'=>'button')); ?> <?php echo $this->Html->link('cancel', array('action'=>'account')); ?></p>
 	<?php echo $this->Form->end(); ?>
-</fieldset>
+</div>

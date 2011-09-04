@@ -414,23 +414,6 @@ blockquote {
   margin-bottom: 25px; 
 }
 
-#main-content fieldset {
-  border: none;
-  background-color: #eee;
-  width: 101%;
-  padding: 10px;
-  margin-bottom: 25px;
-}
-
-#main-content fieldset legend {
-  margin-bottom: 20px;
-	font-size: 125%;
-	font-family: Georgia, Garamond, serif;
-	color: #876925;
-	background-color: #eee;
-	padding: 10px;
-}
-
 #main-content .bold {
   font-weight: bold; 
 }
@@ -469,13 +452,27 @@ blockquote {
 	margin-bottom: 10px;
 }
 
-#main-content fieldset#search-users {
+/*#main-content #search-users {
 	margin-top: 15px;
 }
 
-#main-content fieldset#search-users label {
+#main-content #search-users label {
 	display: inline;
 	margin: 0 3px 0 10px;
+}*/
+
+#search-users p {
+	float: left;
+}
+
+#search-users p label {
+	float: left;
+	margin: 0;
+	padding: 0 5px 0 0;
+}
+
+#search-users p.button {
+	clear: both;
 }
 
 #main-content form input#UserVisible {
@@ -487,16 +484,16 @@ blockquote {
 	margin-right: 5px;
 }
 
+/* Form background styling */
+#personal-info, #profile-info, #login-fieldset, #register, #search-users, #edit-avatar, #add-avatar, #deactivate-account, #reactivate-account, #contact-message {
+	border: none;
+  background-color: #eee;
+  width: 700px;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
 /* Form terms of service */
-
-#main-content form #UserToS {
-	width: 20px;
-}
-
-#main-content form label.tos {
-	display: inline;
-	font-weight: 100;
-}
 
 p#tos {
 	margin-bottom: 10px;
@@ -504,20 +501,45 @@ p#tos {
 	font-weight: 100;
 }
 
+p#tos label {
+	display: inline;
+}
+
+p#tos #UserToS {
+	width: 20px;
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+.tos-error-message {
+	color: #890000;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
 /* ----- Form errors ---- */
 
 .form-error {
-  padding: 5px;
-  width: 300px;
   border: 1px solid #890000;
 }
 
-.error-message {
+#main-content .error-message {
   margin-top: -20px;
   margin-bottom: 20px;
   font-weight: bold;
   color: #890000;
+  font-size: 12px;
 }
+
+/* -- Add and edit avatar styles ---*/
+#add-avatar, #edit-avatar {
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+
 /* ----- main-content pagination styles ----- */
 
 #main-content .pagination {
@@ -915,13 +937,14 @@ fieldset .user-sidebar {
 #forgot-password {
 	background-color: #ccc;
 	border: 1px solid #aaa;
-	padding: 10px;
+	padding: 10px 5px 10px 10px;
 	font-size: 11px;
 	position: relative;
 	top: 150px;
 	left: 350px;
-	margin: 0;
-	width: 300px;
+	margin: -55px 0 0 0;
+	width: 325px;
+	text-align: center;
 }
 
 #forgot-password-link {
@@ -936,6 +959,10 @@ fieldset .user-sidebar {
 
 #forgot-password-link a:hover, #forgot-password-link a:active {
 	color: #fff;
+}
+
+#register .button {
+	margin-top: 15px;
 }
 
 /* --- Chirp view page ---- */

@@ -1,5 +1,5 @@
-<fieldset>
-	<legend>Deactivate Account?</legend>
+<div id="deactivate-account">
+	<h1>Deactivate Account?</h1>
 	<?php echo $this->Form->create('User', array('action'=>'deactivate_account')); ?>
 		<p>
 			<span class="help">
@@ -10,4 +10,4 @@
 		</p>
 		<p><?php echo $this->Form->submit('Deactivate', array('div'=>FALSE, 'class'=>'button')); ?> <?php echo $this->Html->link('cancel', array('action'=>'account')); ?></p>
 	<?php echo $this->Form->end(); ?>
-</fieldset>
+</div>
