@@ -6,13 +6,16 @@
   </div>
   
   
-  <div id="login">
+  
   <?php if ($logged_in): ?>
+  <div id="login">
     <p class="logged_in_as">
       You are logged in as: &nbsp;<br /> <?php echo ucfirst($current_user['User']['username']); ?>.
     </p>
+  </div>
   <?php else: ?>
   	<?php if ($not_login_register): ?>
+  	<div id="login">
     	<?php echo $this->Form->create('User', array('controller'=>'users', 'action'=>'login')); ?>
 			<p>
 				<?php echo $this->Form->label('User.username', '&nbsp;'); ?>
@@ -30,8 +33,8 @@
 				<?php echo $this->Form->submit('Login', array('id'=>'login_button', 'class'=>'button', 'div'=>FALSE)); ?>
 			</p>
 			<?php echo $this->Form->end(); ?>
+		</div>
 		<?php endif; ?>
   <?php endif; ?>
-  </div>
   
 </div><!-- end header -->
