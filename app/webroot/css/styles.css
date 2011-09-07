@@ -203,7 +203,7 @@ blockquote {
 
 /* -- Sub navigation for drop menu -- */
 
-#main-nav li ul {
+#nav li ul {
   display: none;
   width: 9em;
   background-color: #7a6020;
@@ -215,21 +215,21 @@ blockquote {
   z-index: 1;
 }
 
-#main-nav li:hover ul, #main-nav li.hover ul {
+#nav li:hover ul, #nav li.hover ul {
   display: block;
   position: absolute;
 }
 
-#main-nav li:hover li, #main-nav li.hover li {
+#nav li:hover li, #nav li.hover li {
   float: none;
   padding-left: .3em;
 }
 
-#main-nav li:hover li a, #main-nav li.hover li a {
+#nav li:hover li a, #nav li.hover li a {
 	color: #fff968; 
 }
 
-#main-nav li li a:hover {
+#nav li li a:hover {
 	background-color: #ae892f;
 }
 

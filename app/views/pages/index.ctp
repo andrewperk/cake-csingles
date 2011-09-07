@@ -1,20 +1,20 @@
 <h1>Welcome to Canary Singles</h1>
 
-<p>Personal ads for the chemically injured - Multiple Chemical
+<p>Personal ads or online dating for the chemically injured - Multiple Chemical
 Sensitivity or MCS, Fibromyalgia or FMS, Gulf War Syndrome or GWS,
-Chronic Fatigue Syndrome or CFIDS, Autism or other chronic health
-conditions induced, exacerbated or perpetuated by environmental toxins
-found in common everyday chemicals.</p>
+Chronic Fatigue Syndrome or CFIDS, EMHS or Electromagnetic Hypersensitivity, 
+Autism or other chronic health conditions induced, exacerbated or perpetuated 
+by environmental toxins found in common everyday chemicals.</p>
 
 <p>Like the Canary in the coal mine we are a symbol of the dangers that
 await human kind from on-going exposures to
 a chemically contaminated environment.</p>
 
-<p>As anyone living with MCS, FMS, CFIDS or other chemical injury related
+<p>As anyone living with MCS, EMHS or other chemical injury related
 illness knows, meeting people, finding fulfilling friendships or a
 life partner who shares our lifestyle is a very difficult task indeed.</p>
 
-<p>Canary Singles provides a personal ads network where you can meet
+<p>Canary Singles provides a personal ads or online dating network where you can meet
 other Canaries for friendship, dating, companionship, activity
 partners, romance or pen pals.</p>
 
@@ -27,7 +27,7 @@ partners, romance or pen pals.</p>
 
 <li>Practice avoidance of common everyday chemicals and environmental toxins</li>
 
-<li>Natural health and alternative medicine practices</li>
+<li>Use natural health and alternative medicine practices</li>
 
 <li>Eat a healthy and organic diet</li>
 

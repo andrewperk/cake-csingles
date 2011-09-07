@@ -71,6 +71,20 @@
     </tr>
   </table>
   
+  <h6>Looking For</h6>
+  <table class="description">
+    <tr>
+      <td class="label">Looking For: </td>
+      <td>
+        <?php if($user['User']['looking_for']): ?>
+        <?php echo $user['User']['looking_for']; ?>
+        <?php else: ?>
+        None
+        <?php endif; ?>
+      </td>
+    </tr>
+  </table>
+  
   <h6>Interests</h6>
   <table class="interests">
     <tr>

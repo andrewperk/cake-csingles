@@ -477,6 +477,10 @@ You will receive a confirmation email with your account details.
 	 * Does not stop paypal subscription yet. User does manually through Paypal account.
 	 */
 	public function deactivate_account() {
+		if (!$this->is_admin()) {
+			$this->redirect(array('action'=>'index'));
+		}
+		
 		$current_user = $this->current_user();
 		
 		if ($current_user['User']['visible'] == 0) {
@@ -497,6 +501,10 @@ You will receive a confirmation email with your account details.
 	 * Does not reinitialize Paypal subscription if they cancelled at Paypal. User will have to pay again.
 	 */
 	public function reactivate_account() {
+		if (!$this->is_admin()) {
+			$this->redirect(array('action'=>'index'));
+		}
+		
 		$current_user = $this->current_user();
 		
 		if ($current_user['User']['visible'] == 1) {

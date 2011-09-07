@@ -23,6 +23,7 @@
 		<script src="http://yui.yahooapis.com/2.9.0/build/container/container_core-min.js"></script>
 		<!-- Source file for Rich Text Editor-->
 		<script src="http://yui.yahooapis.com/2.9.0/build/editor/simpleeditor-min.js"></script>
+		<?php echo $this->Html->script(array('jquery-1.2.6.min.js', 'drop-menu.js')); ?>
 
   </head>
   <body class="yui-skin-sam">

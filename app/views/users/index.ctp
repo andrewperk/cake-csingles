@@ -39,6 +39,9 @@
 	</p>
 	
 	<p class="username"><?php echo $this->Html->link($user['User']['username'], array('action'=>'view', $user['User']['id'])); ?> 
+		<?php if($user['User']['looking_for']): ?>
+			(Looking For: <?php echo $user['User']['looking_for']; ?>)
+		<?php endif; ?>
 		<?php if ($user['User']['gender']): ?>
 			- <?php echo $user['User']['gender']; ?> 
 			<?php if ($user['User']['age']): ?>

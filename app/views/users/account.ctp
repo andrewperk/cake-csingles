@@ -54,6 +54,16 @@
     	</span>
     	<?php echo $this->Form->textarea('interests', array('div'=>FALSE, 'cols'=>'30', 'rows'=>'6')); ?>
   	</p>
+  	<p>
+  		<?php echo $this->Form->input('looking_for', array('div'=>FALSE, 
+  			'options'=>array('Friendship'=>'Friendship',
+  											 'Activity Partner'=>'Activity Partner',
+  											 'Email or Pen Pal'=>'Email or Pen Pal',
+  											 'Romance'=>'Romance',
+  											 'Casual Dating'=>'Casual Dating',
+  											 'Long-Term Relationship'=>'Long-Term Relationship',
+  											 'Marriage'=>'Marriage'))); ?>
+  	</p>
     <p>
     	<?php echo $this->Form->label('health_cond', 'Health Conditions'); ?>
     	<span class="help">
