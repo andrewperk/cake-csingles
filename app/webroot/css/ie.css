@@ -12,3 +12,7 @@
 	padding: 5px;
   width: 50%;
 }
+
+input {
+	font-family: sans-serif; /* IE password field fix */
+}
