@@ -3,14 +3,14 @@
 
 <p>If we do a Google search on the term "Infidelity" we come up with a bunch of sites that talk about how to cope with it, survive it, statistics on prevalence, forums for support, dealing with it, recovering from it, forgiving it, getting over it, how to prove it, how to catch a cheating lover, how to detect it and private investigators to help you catch them. You can even learn how to detect semen stains. </p>
 
+<div style="display:block;float:left;padding:6px 8px 0 0;">
+	<?php echo $this->Html->image('advice/infidelity2.jpg', array('alt'=>'Prevent Infidelity', 'width'=>'206', 'height'=>'135')); ?>
+</div>
+
 <p>What I think is really sad, is that we don't see any sites talking about how to "Prevent it." Furthermore, according to Wordtracker, the most reliable source for finding what people search for on the Internet, it tells me that searches for the term "Prevent Infidelity," are non-existent. Not one person a month performs a search for this term.</p>
 
 <p>I think we need to ask, why is that? Why aren't people interested in protecting their relationship from one of the most painful and potentially destructive forces it faces? Why are we willing to invest so much time and energy after the fact, and yet take no steps in advance to avoid it?</p>
 	  
-<div style="display:block;float:left;padding:6px 8px 0 0;">
-	<?php echo $this->Html->image('advice/infidelity2.jpg', array('alt'=>'Prevent Infidelity', 'width'=>'135', 'height'=>'206')); ?>
-</div>
-
 <p>Infidelity can be prevented in most cases. Yes, sometimes it does just happen in a weak moment, but that is not the situation the majority of the time. For the most part, nest hopping is something that develops over time and there are a variety of safeguards you can put into place that will at the very least decrease your risks quite significantly and quite possibly prevent it completely. If we put as much time and energy into preserving our relationships as we do into catching a cheater then we wouldn't have the need to catch them.</p>
 
 <p><strong>The key to bullet proof your relationship from infidelity lies in awareness and action.</strong></p>

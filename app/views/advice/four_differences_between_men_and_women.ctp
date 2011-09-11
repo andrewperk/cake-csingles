@@ -1,4 +1,4 @@
-<h1>Four Primary Differences Between Men and Women's Sexual Needs</h1>
+<h1>Four Primary Differences Between Men<br /> and Women's Sexual Needs</h1>
 
 <p>Men and women have very different sexual needs and biological responses and it's crucial that each partner understand 
 these important differences to have a full and mutually satisfying sexual relationship.</p>
@@ -9,7 +9,7 @@ these important differences to have a full and mutually satisfying sexual relati
 
 <p>There are four crucial differences between men and women when it comes to sex and those are as follows:</p>
 
-<ul>
+<ol>
 <li>Most women can't achieve orgasm through standard intercourse alone.  She needs clitoral stimulation. Men and women mistakenly believe 
 that the woman will be able to achieve orgasm through penetration and lots of thrusting. That is not the case unless the couple knows 
 how to position their bodies in a manner that provides her with clitoral stimulation.
@@ -50,7 +50,7 @@ your sexual encounters will be for her. How you treat her outside the bedroom ha
 inside the bedroom. If you're always shutting her out or treating her nasty throughout your days, you can't expect her to 
 fall passionately into your arms in the evening.  Men want to feel emotionally connected to their partner as well, 
 however it is not a prerequisite to having satisfying sex.  Men feel more connected emotionally to their partner by having sex.</li>
-</ul>
+</ol>
 
 <p>When couples become aware of these crucial differences between them and their lover and make a conscious effort 
 to meet the needs of both partners as equally as possible then they experience a more fulfilling and pleasurable 

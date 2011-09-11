@@ -1,6 +1,6 @@
 <h1>Welcome to Canary Singles</h1>
 
-<p>Personal ads or online dating for the chemically injured - Multiple Chemical
+<p>Personal ads or online dating for the chemically injured -  Singles with Multiple Chemical
 Sensitivity or MCS, Fibromyalgia or FMS, Gulf War Syndrome or GWS,
 Chronic Fatigue Syndrome or CFIDS, EMHS or Electromagnetic Hypersensitivity, 
 Autism or other chronic health conditions induced, exacerbated or perpetuated 
@@ -45,7 +45,7 @@ partners, romance or pen pals.</p>
 
 <li>Add a profile for Free</li>
 
-<li>Search for other Canaries for Free</li>
+<li>Search for other single Canaries for Free</li>
 
 <li>Upgrade to an affordable premium membership when you're ready to connect</li>
 </ol>

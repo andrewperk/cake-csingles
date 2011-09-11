@@ -1,3 +1,4 @@
+<div id="advice-articles">
 <h1 style="text-align: center;">Relationship Advice Center</h1>
 
 <?php echo $this->Html->image('advice/advice-banner.jpg', array('alt'=>'Relationship Advice Center')); ?><br /><br />
@@ -45,7 +46,7 @@
 <h2>Sexuality and Chronic Illness</h2>
 
 <p>Sexuality plays a vital role in our overall health. It should be of great interest to anyone living with a chronic illness or health condition because of the vast amount of benefits it brings to us psychologically, spiritually and physiologically.
-Not only is sex an important part of who you are and of your relationship, but it can also benefit your illness. Sex boosts your immune system and is a great pain reliever, because of the endorphins released when orgasm occurs. The exchange of energy when being sexually intimate can also provide pain relief. By becoming completely absorbed in the moment and the act of lovemaking, you can temporarily transcend your pain and symptoms. The act of sex can divert your attention away from your pain and symptoms.
+Not only is sex an important part of who you are and of your relationship, but it can also benefit your illness.
 <?php echo $this->Html->link('Read more...', array('action'=>'sexuality_and_chronic_illness')); ?></p>
 
 
@@ -124,5 +125,7 @@ Not only is sex an important part of who you are and of your relationship, but i
 <h2>Submit Your Relationship Question</h2>
 
 <p>Have a topic you'd like to see in the Relationship Advice Center? 
+
 	<?php echo $this->Html->link('Submit your question', array('controller'=>'contact_messages', 'action'=>'send')); ?> and 
 	if Cynthia feels that it is a topic that would be of interest to many other Canaries, then she will answer it and post it in the center.</p>
+</div><!-- end advice-articles -->

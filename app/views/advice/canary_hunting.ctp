@@ -4,7 +4,7 @@
 Each of these aspects need to be present like a cog in a well running machine. If one is missing, then unhappiness, dissatisfaction and/or break up is likely.</p> 
 
 <div style="display:block;float:left;padding:6px 8px 0 0;">
-	<?php echo $this->Html->image('advice/hunting.jpg', array('alt'=>'Canary Hunting', 'width'=>'138', 'height'=>'207')); ?>
+	<?php echo $this->Html->image('advice/hunting3.jpg', array('alt'=>'Canary Hunting', 'width'=>'206', 'height'=>'137')); ?>
 </div>
 
 <p>The most common mistake in couples is the relationship gets built on chemistry alone. Chemistry, if not accompanied by shared values and interests, will only sustain you for a certain amount of time. It may make the relationship very satisfying in the beginning, but as chemistry dissipates to some degree which it naturally does in all cases, the lack of connection on other levels will become more apparent and magnified.</p>
@@ -71,7 +71,7 @@ Each of these aspects need to be present like a cog in a well running machine. I
 
 <p>There does not have to be agreement on all values, but there needs to be enough of them to build a strong foundation and these should be hashed out prior to making a commitment.</p>
 
-<h2>What Type of Relationship Do You Want</h2>
+<h2>What Type of Relationship Do You Want?</h2>
 
 <p>Once again this is where awareness, openness, honesty and communication are crucial. First of all, you need to know what it is you want and be willing to be completely honest with potential partners. Are you wanting to build a permanent nest with someone, are you just looking for a good time or something in-between?</p>
 

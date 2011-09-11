@@ -5,7 +5,7 @@ special needs that each canary has based on their unique sensitivities and limit
  meaningful relationship quite difficult and negotiation may require some very creative, non-traditional methods.</p>
 	  
 <div style="display:block;float:left;padding:6px 8px 0 0;">
-	<?php echo $this->Html->image('advice/nest.jpg', array('alt'=>'My Nest or Yours', 'width'=>'138', 'height'=>'207')); ?>
+	<?php echo $this->Html->image('advice/nest2.jpg', array('alt'=>'My Nest or Yours', 'width'=>'207', 'height'=>'138')); ?>
 </div>
 
 <p>Even when people really care for one another, conflicting needs can become a major roadblock. For many, especially those with extreme MCS, 
@@ -28,31 +28,28 @@ can't compare yourself to others in the general population.</p>
 
 <h2>Here are a few potential solutions</h2> 
 
-<p><strong>1</strong>. You live in the same nest, but you have a separate room that holds the TV, computer or whatever items are not tolerable, so they are kept away 
-from the sensitive individual, yet the one who enjoys these activities does not have to give them up. For some very sensitive people, a separate room 
-within the house is not far enough away. In that case, the garage could be fixed up to be the extra room or if finances allow, you could add a 
-small addition to the house, or build a separate structure on the property further away from the house.</p> 
+<ol><li>
+You live in the same nest, but you have a separate room that holds the TV, computer or whatever items are not tolerable, so they are kept away from the sensitive individual, yet the one who enjoys these activities does not have to give them up. For some very sensitive people, a separate room within the house is not far enough away. In that case, the garage could be fixed up to be the extra room or if finances allow, you could add a small addition to the house, or build a separate structure on the property further away from the house.</li> 
 
-<p>If the scents a partner brings home after they socialize are problematic, there can be two bathrooms, or a bathroom could be added
- to the garage. A spare room can be used for the partner to sleep in that night until they air out.</p> 
+<li>If the scents a partner brings home after they socialize are problematic, there can be two bathrooms, or a bathroom could be added to the garage. A spare room can be used for the partner to sleep in that night until they air out.</li> 
 
-<p>Some canary's may need their own bedroom on a daily basis, to recoup every night. This doesn't mean there cannot be a satisfying 
+<li>Some canary's may need their own bedroom on a daily basis, to recoup every night. This doesn't mean there cannot be a satisfying 
 sexual relationship. Couples can come together for a couple hours of foreplay, lovemaking and cuddling and then go to their 
-respective bedrooms afterwards. They may also pick one or two nights a week or month when they do sleep together, if symptoms are not too severe.</p>
+respective bedrooms afterwards. They may also pick one or two nights a week or month when they do sleep together, if symptoms are not too severe.</li>
 
-<p><strong>2</strong>. For the canaries with an extensive list of sensitivities and needs that can't be negotiated, maintaining separate nests is 
-sometimes the only option. This can be accomplished in many ways, depending on the unique circumstances and desires of each partner.</p> 
+<li>For the canaries with an extensive list of sensitivities and needs that can't be negotiated, maintaining separate nests is 
+sometimes the only option. This can be accomplished in many ways, depending on the unique circumstances and desires of each partner.</li> 
 
-<p>You both have a separate nest in the climate that fits you best and get together whenever it works out. This option has a limited 
+<li>You both have a separate nest in the climate that fits you best and get together whenever it works out. This option has a limited 
 amount of interaction, but for some couples it may sufficient.If more time together is desired, then a couple can attempt to build 
-nests in the same city or at least near enough that travel time does not inhibit get togethers.</p> 
+nests in the same city or at least near enough that travel time does not inhibit get togethers.</li> 
 
-<p>For those who want to simulate the experience of living together, there are a few options as well. You could have a house that 
-has a mother-in-law suite and one partner lives in the main house and the other lives in the suite, or a duplex where each of you lives on one side.</p> 
+<li>For those who want to simulate the experience of living together, there are a few options as well. You could have a house that 
+has a mother-in-law suite and one partner lives in the main house and the other lives in the suite, or a duplex where each of you lives on one side.</li> 
 
-<p>If that's too close for comfort, there can be two separate houses on the property. A big house and a smaller house, or a house and 
+<li>If that's too close for comfort, there can be two separate houses on the property. A big house and a smaller house, or a house and 
 a trailer, or even two trailers side by side. For those who are not fortunate enough to have safer housing and may be living in 
-their cars, (and many of us have been there) parking side-by-side could even work.</p> 
+their cars, (and many of us have been there) parking side-by-side could even potentially work.</li> </ol>
 
 <p>Each of these options allows the canaries to come together for quality time and go back to their respective nests. It enables them 
 to maintain the boundaries that are necessary for their health, yet the ability to nurture a meaningful and fulfilling relationship. No it 

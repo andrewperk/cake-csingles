@@ -5,7 +5,7 @@ gives a whole new meaning to the process. Everything from what foods can be cook
 toothpaste and body soap you use must be agreed upon.</p>
 
 <div style="display:block;float:left;padding:6px 8px 0 0;">
-	<?php echo $this->Html->image('advice/negotiate2.jpg', array('alt'=>'Negotiating the Nest', 'width'=>'138', 'height'=>'207')); ?>
+	<?php echo $this->Html->image('advice/negotiate2.jpg', array('alt'=>'Negotiating the Nest', 'width'=>'207', 'height'=>'137')); ?>
 </div>
 
 <p>One thinks that finding a partner who shares their health condition would make nesting an easier process than being with 

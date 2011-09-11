@@ -8,7 +8,7 @@
 <p>Many men watch porn movies thinking this will teach them what a woman wants. Typical porn movies DO NOT teach you how to satisfy a woman, they are designed for a males satisfaction. They aren't realistic. Most of them are downright offensive to many women.</p>
 
 <div style="display:block;float:left;padding:6px 8px 0 0;">
-	<?php echo $this->Html->image('advice/top-ten2.jpg', array('alt'=>'How to Make Love to a Woman', 'width'=>'126', 'height'=>'206')); ?>
+	<?php echo $this->Html->image('advice/top-ten2.jpg', array('alt'=>'How to Make Love to a Woman', 'width'=>'206', 'height'=>'126')); ?>
 </div>
 
 <p>They will try and make you believe that men need a nine inch penis to be a good lover and that the woman will climax again and again with repeated thrusting. She'll also be wearing her shoes and she reaches climax rather quickly. These are all myths.</p>

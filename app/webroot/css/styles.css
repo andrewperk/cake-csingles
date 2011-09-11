@@ -772,6 +772,17 @@ fieldset .user-sidebar {
 	border-bottom: 1px solid #584711;
 }
 
+/* ----- sidebar-header styles ---- */
+#sidebar-header {
+position: absolute;
+float: right;
+top: 80px;
+left: 760px;
+overflow: hidden;
+color: #fff;
+margin-left: 5px;
+}
+
 /* ----- sidebar-content styles ----- */
 
 #sidebar-content {
@@ -905,6 +916,11 @@ fieldset .user-sidebar {
 
 #main-content p.answer {
 	color: #333;
+}
+
+/* ---- advice-articles styles ----- */
+#main-content #advice-articles h2 {
+	margin-top: 15px;
 }
 
 

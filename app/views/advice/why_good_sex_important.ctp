@@ -18,7 +18,7 @@
 <strong><p>The Physical</p></strong>
 	  
 <div style="display:block;float:left;padding:6px 8px 0 0;">
-	<?php echo $this->Html->image('advice/missionary2.jpg', array('alt'=>'Why Good Sex is Important', 'width'=>'136', 'height'=>'207')); ?>
+	<?php echo $this->Html->image('advice/missionary2.jpg', array('alt'=>'Why Good Sex is Important', 'width'=>'207', 'height'=>'136')); ?>
 </div>
 
 <p>Besides the obvious fact that there's not much in this world that feels as good as sex physically, it's also good for our health.</p>
