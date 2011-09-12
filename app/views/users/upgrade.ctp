@@ -12,7 +12,7 @@
 	<p>Only $19.99 for three months.<br />
 (Billed automatically to your credit card every three months. You must cancel to stop automatic billing.)</p>
 
-<?php echo $paypal->button('Upgrade Now', array('test' => TRUE, 'type' => 'subscribe', 'custom'=>$current_user['User']['id'], 'amount' => '19.99', 'term' => 'month', 'period' => '3')); ?>
+<?php echo $paypal->button('Upgrade Now', array('type' => 'subscribe', 'custom'=>$current_user['User']['id'], 'return'=>'http://www.canarysingles.com/login', 'amount' => '19.99', 'term' => 'month', 'period' => '3')); ?>
 <?php else: ?>
 	<h1>You're Upgraded!</h1>
 	<p>You've already been upgraded to a premium member. You can now interact with other canary single members.</p>

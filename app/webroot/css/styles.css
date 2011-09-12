@@ -484,7 +484,7 @@ blockquote {
 }
 
 /* Form background styling */
-#personal-info, #profile-info, #login-fieldset, #register, #search-users, #edit-avatar, #add-avatar, #deactivate-account, #reactivate-account, #contact-message {
+#personal-info, #profile-info, #login-fieldset, #resend-password-fieldset, #register, #search-users, #edit-avatar, #add-avatar, #deactivate-account, #reactivate-account, #contact-message {
 	border: none;
   background-color: #eee;
   width: 700px;
@@ -919,8 +919,8 @@ margin-left: 5px;
 }
 
 /* ---- advice-articles styles ----- */
-#main-content #advice-articles h2 {
-	margin-top: 15px;
+#main-content #advice-articles p {
+	margin-bottom: 25px;
 }
 
 

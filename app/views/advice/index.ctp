@@ -3,7 +3,9 @@
 
 <?php echo $this->Html->image('advice/advice-banner.jpg', array('alt'=>'Relationship Advice Center')); ?><br /><br />
 
-<p>All advice and tips in the Relationship Advice Center are provided by the creator of Canary Singles, Cynthia Perkins, M.Ed. Cynthia is a holistic health counselor, sobriety coach and adult sex educator. She holds a bachelor's degree in psychology and a master's degree in counseling and is the author of numerous self-help books.</p> 
+<p>All advice and tips in the Relationship Advice Center are provided by the creator of Canary Singles, Cynthia Perkins, M.Ed. 
+Cynthia is a holistic health counselor, sobriety coach and adult sex educator. She holds a bachelor's degree
+ in psychology and a master's degree in counseling and is the author of numerous self-help books.</p> 
 
 <h2>Canary Hunting</h2>
 
@@ -45,7 +47,8 @@
 
 <h2>Sexuality and Chronic Illness</h2>
 
-<p>Sexuality plays a vital role in our overall health. It should be of great interest to anyone living with a chronic illness or health condition because of the vast amount of benefits it brings to us psychologically, spiritually and physiologically.
+<p>Sexuality plays a vital role in our overall health. It should be of great interest to anyone living with a chronic 
+illness or health condition because of the vast amount of benefits it brings to us psychologically, spiritually and physiologically.
 Not only is sex an important part of who you are and of your relationship, but it can also benefit your illness.
 <?php echo $this->Html->link('Read more...', array('action'=>'sexuality_and_chronic_illness')); ?></p>
 
@@ -124,8 +127,6 @@ Not only is sex an important part of who you are and of your relationship, but i
 
 <h2>Submit Your Relationship Question</h2>
 
-<p>Have a topic you'd like to see in the Relationship Advice Center? 
-
-	<?php echo $this->Html->link('Submit your question', array('controller'=>'contact_messages', 'action'=>'send')); ?> and 
+<p>Have a topic you'd like to see in the Relationship Advice Center? <?php echo $this->Html->link('Submit your question', array('controller'=>'contact_messages', 'action'=>'send')); ?> and 
 	if Cynthia feels that it is a topic that would be of interest to many other Canaries, then she will answer it and post it in the center.</p>
-</div><!-- end advice-articles -->
+</div>
