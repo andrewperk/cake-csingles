@@ -30,10 +30,10 @@ This is the most essential key for exciting and pleasuring your man. It's one of
 <p><strong>Straight for the genitals</strong><br /><br />
 Unlike women, men love it when you go straight for their genitals. So when you press your body up against his and plant a hot passionate kiss on his lips, grab hold of his crotch with a good tight grip. Slip your hand in his pants and start stroking.</p><br />
 
-<p><strong>Every so often a man just wants to fuck</strong><br /><br />
+<p><strong>Every so often a man just wants to have sex</strong><br /><br />
 This isn't anything to get upset about. It doesn't mean he doesn't love you. Sometimes he just wants to go straight for the raw, carnal ride without having to focus on all the tender loving aspects. Understand this and you too can learn to enjoy the occasional down and dirty adventure.<br /><br />
 
-However, keep in mind that this is something that should occur only every now and then. There should be a healthy balance of lovemaking mixed in as well. If your man wants to fuck in every sexual session, this isn't a healthy loving relationship. It means he either has some deep issues with intimacy or may not be emotionally connected to you.</p>
+However, keep in mind that this is something that should occur only every now and then. There should be a healthy balance of lovemaking mixed in as well. If your man just wants to have sex in every sexual interaction, this isn't a healthy loving relationship. It means he either has some deep issues with intimacy or may not be emotionally connected to you.</p>
 
 <p>Many women have difficulty with some of these suggestions because they are lacking in self-confidence or worry about things like body image. It's important to keep in mind that your relationship with yourself must be strong and come first in order to be a good lover and find your own pleasure in sex.
 

@@ -50,4 +50,10 @@ partners, romance or pen pals.</p>
 <li>Upgrade to an affordable premium membership when you're ready to connect</li>
 </ol>
 
+<h2>Grand Opening Drawing - Win a Free Premium Membership</h2>
+
+<p>To celebrate the grand opening of Canary Singles, we're giving away 5 free upgrades to a premium membership. To participate in the random drawing, all you need to do is register for a free membership before October 15th. This will automatically submit your name to the drawing database.</p>
+
+<p>Winners will be announced here on October 17th.</p> 
+
 <p class="bold"><?php echo $this->Html->link('Register Today', array('controller'=>'users', 'action'=>'add')); ?> - It's Free!.</p>
