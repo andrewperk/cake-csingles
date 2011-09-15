@@ -484,7 +484,9 @@ blockquote {
 }
 
 /* Form background styling */
-#personal-info, #profile-info, #login-fieldset, #resend-password-fieldset, #register, #search-users, #edit-avatar, #add-avatar, #deactivate-account, #reactivate-account, #contact-message {
+#personal-info, #profile-info, #login-fieldset, #resend-password-fieldset, 
+#register, #search-users, #edit-avatar, #add-avatar, #deactivate-account, 
+#reactivate-account, #contact-message, #password-confirm-change{
 	border: none;
   background-color: #eee;
   width: 700px;

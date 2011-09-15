@@ -16,7 +16,6 @@
 <?php echo $this->Form->create('User', array('action'=>'account')); ?>
 <div id="personal-info">
     <h2>Edit Personal Info</h2>
-    <p>Note: You must enter a password and confirm it to approve your changes.</p><br />
     <p><?php echo $this->Form->input('firstname', array('div'=>FALSE, 'label'=>'First Name')); ?></p>
     <p><?php echo $this->Form->input('lastname', array('div'=>FALSE, 'label'=>'Last Name')); ?></p>
     <p>
@@ -26,8 +25,6 @@
     	</span>
     	<?php echo $this->Form->text('email', array('div'=>FALSE)); ?>
   	</p>
-    <p><?php echo $this->Form->input('password', array('div'=>FALSE)); ?></p>
-    <p><?php echo $this->Form->input('password_confirmation', array('div'=>FALSE, 'type'=>'password')); ?></p>
 </div>
 <div id="profile-info">
     <h2>Profile Information</h2>
@@ -75,6 +72,12 @@
     <p><?php echo $this->Form->input('state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state')); ?></p>
     <p><?php echo $this->Form->input('gender', array('div'=>FALSE, 'options'=>array('male'=>'male', 'female'=>'female'))); ?></p>
     <p><?php echo $this->Form->input('age', array('div'=>FALSE)); ?></p>
+</div>
+<div id="password-confirm-change">
+	<h2>Password Confirmation</h2>
+	<p class="bold">Note: You must enter a password and confirm it to approve your changes.</p><br />
+	<p><?php echo $this->Form->input('password', array('div'=>FALSE)); ?></p>
+  <p><?php echo $this->Form->input('password_confirmation', array('div'=>FALSE, 'type'=>'password')); ?></p>
 </div>
 <p><?php echo $this->Form->submit('Update', array('div'=>FALSE, 'class'=>'button')); ?></p>
 <?php echo $this->Form->end(); ?>
