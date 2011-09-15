@@ -18,6 +18,21 @@
     <h2>Edit Personal Info</h2>
     <p><?php echo $this->Form->input('firstname', array('div'=>FALSE, 'label'=>'First Name')); ?></p>
     <p><?php echo $this->Form->input('lastname', array('div'=>FALSE, 'label'=>'Last Name')); ?></p>
+    <p><?php echo $this->Form->input('state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state')); ?></p>
+    <p>
+  		<?php echo $this->Form->input('country', array('div'=>FALSE, 
+  			'options'=>array('United States'=>'United States',
+  											 'Australia'=>'Australia',
+  											 'Canada'=>'Canada',
+  											 'China'=>'China',
+  											 'France'=>'France',
+  											 'Germany'=>'Germany',
+  											 'Italy'=>'Italy',
+  											 'Japan'=>'Japan',
+  											 'Mexico'=>'Mexico',
+  											 'Spain'=>'Spain',
+  											 'United Kingdom'=>'United Kingdom'))); ?>
+  	</p>
     <p>
     	<?php echo $this->Form->label('email'); ?>
     	<span class="help">
@@ -69,7 +84,6 @@
     	<?php echo $this->Form->textarea('health_cond', array('div'=>FALSE, 'rows'=>'6', 'cols'=>'30')); ?>
   	</p>
     <p><?php echo $this->Form->input('sensitivity_level', array('div'=>FALSE, 'options'=>array('Severe'=>'Severe', 'Moderate'=>'Moderate', 'Mild'=>'Mild'))); ?></p>
-    <p><?php echo $this->Form->input('state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state')); ?></p>
     <p><?php echo $this->Form->input('gender', array('div'=>FALSE, 'options'=>array('male'=>'male', 'female'=>'female'))); ?></p>
     <p><?php echo $this->Form->input('age', array('div'=>FALSE)); ?></p>
 </div>

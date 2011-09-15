@@ -44,9 +44,12 @@
 		<?php endif; ?>
 		<?php if ($user['User']['gender']): ?>
 			- <?php echo $user['User']['gender']; ?> 
-			<?php if ($user['User']['age']): ?>
-				<?php echo $user['User']['age']; ?> years old.
-			<?php endif; ?>
+		<?php endif; ?>
+		<?php if ($user['User']['age']): ?>
+				<?php echo $user['User']['age']; ?> years old
+		<?php endif; ?>
+		<?php if ($user['User']['country']): ?>
+			 from <?php echo $user['User']['country']; ?>
 		<?php endif; ?>
 		</p>
 	

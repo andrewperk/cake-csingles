@@ -46,6 +46,16 @@
       </td>
     </tr>
     <tr>
+      <td class="label">Country: </td>
+      <td>
+        <?php if($user['User']['country']): ?>
+        <?php echo $user['User']['country']; ?>
+        <?php else: ?>
+        None
+        <?php endif; ?>
+      </td>
+    </tr>
+    <tr>
       <td class="label">State: </td>
       <td>
         <?php if($user['User']['state']): ?>
