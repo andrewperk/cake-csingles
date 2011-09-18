@@ -47,7 +47,8 @@
     	<?php echo $this->Form->label('headline', 'Headline'); ?>
     	<span class="help">(Ex: Free spirited canary seeks partner to soar.)</span>
     	<?php echo $this->Form->text('headline', array('div'=>FALSE)); ?>
-    	</p>
+  	</p>
+  	<div id="yui-texteditor">
     <p>
     	<?php echo $this->Form->label('desc', 'Describe Yourself'); ?>
     	<span class="help">(What you are seeking from a relationship? What is important and acceptable to you? What type of 
@@ -57,6 +58,8 @@
     	Are you looking for friends, romance, nesting etc.)</span>
     	<?php echo $this->Form->textarea('desc', array('div'=>FALSE, 'rows'=>'6', 'cols'=>'30')); ?>
     </p>
+    </div>
+    <div id="yui-texteditor">
     <p>
     	<?php echo $this->Form->label('interests'); ?>
     	<span class="help">
@@ -66,6 +69,7 @@
     	</span>
     	<?php echo $this->Form->textarea('interests', array('div'=>FALSE, 'cols'=>'30', 'rows'=>'6')); ?>
   	</p>
+  	</div>
   	<p>
   		<?php echo $this->Form->input('looking_for', array('div'=>FALSE, 
   			'options'=>array('Friendship'=>'Friendship',
@@ -76,6 +80,7 @@
   											 'Long-Term Relationship'=>'Long-Term Relationship',
   											 'Marriage'=>'Marriage'))); ?>
   	</p>
+  	<div id="yui-texteditor">
     <p>
     	<?php echo $this->Form->label('health_cond', 'Health Conditions'); ?>
     	<span class="help">
@@ -83,6 +88,7 @@
    		</span>
     	<?php echo $this->Form->textarea('health_cond', array('div'=>FALSE, 'rows'=>'6', 'cols'=>'30')); ?>
   	</p>
+  	</div>
     <p><?php echo $this->Form->input('sensitivity_level', array('div'=>FALSE, 'options'=>array('Severe'=>'Severe', 'Moderate'=>'Moderate', 'Mild'=>'Mild'))); ?></p>
     <p><?php echo $this->Form->input('gender', array('div'=>FALSE, 'options'=>array('male'=>'male', 'female'=>'female'))); ?></p>
     <p><?php echo $this->Form->input('age', array('div'=>FALSE)); ?></p>
@@ -93,5 +99,6 @@
 	<p><?php echo $this->Form->input('password', array('div'=>FALSE)); ?></p>
   <p><?php echo $this->Form->input('password_confirmation', array('div'=>FALSE, 'type'=>'password')); ?></p>
 </div>
-<p><?php echo $this->Form->submit('Update', array('div'=>FALSE, 'class'=>'button')); ?></p>
+<p><?php echo $this->Form->submit('Update', array('div'=>FALSE, 'class'=>'button', 'id'=>'submitButton')); ?></p>
 <?php echo $this->Form->end(); ?>
+<?php echo $this->element('account_rte'); ?>
