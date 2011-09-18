@@ -82,7 +82,17 @@
   </table>
   
   <h6>Looking For</h6>
-  <table class="description">
+  <table class="looking_for">
+  	<tr>
+      <td class="label">I am: </td>
+      <td>
+        <?php if($user['User']['iam']): ?>
+        <?php echo $user['User']['iam']; ?>
+        <?php else: ?>
+        seeking canaries
+        <?php endif; ?>
+      </td>
+    </tr>
     <tr>
       <td class="label">Looking For: </td>
       <td>

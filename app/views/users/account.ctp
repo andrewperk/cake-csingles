@@ -48,6 +48,25 @@
     	<span class="help">(Ex: Free spirited canary seeks partner to soar.)</span>
     	<?php echo $this->Form->text('headline', array('div'=>FALSE)); ?>
   	</p>
+  	<p>
+  		<?php echo $this->Form->input('iam', array('div'=>FALSE, 
+  			'options'=>array('seeking canaries'=>'seeking canaries',
+  											 'a man seeking a woman'=>'a man seeking a woman',
+  											 'a woman seeking a man'=>'a woman seeking a man',
+  											 'a man seeking a man'=>'a man seeking a man',
+  											 'a woman seeking a woman'=>'a woman seeking a woman'
+  											 ), 'label'=>'I am:')); ?>
+  	</p>
+  	<p>
+  		<?php echo $this->Form->input('looking_for', array('div'=>FALSE, 
+  			'options'=>array('Friendship'=>'Friendship',
+  											 'Activity Partner'=>'Activity Partner',
+  											 'Email or Pen Pal'=>'Email or Pen Pal',
+  											 'Romance'=>'Romance',
+  											 'Casual Dating'=>'Casual Dating',
+  											 'Long-Term Relationship'=>'Long-Term Relationship',
+  											 'Marriage'=>'Marriage'))); ?>
+  	</p>
   	<div id="yui-texteditor">
     <p>
     	<?php echo $this->Form->label('desc', 'Describe Yourself'); ?>
@@ -70,16 +89,6 @@
     	<?php echo $this->Form->textarea('interests', array('div'=>FALSE, 'cols'=>'30', 'rows'=>'6')); ?>
   	</p>
   	</div>
-  	<p>
-  		<?php echo $this->Form->input('looking_for', array('div'=>FALSE, 
-  			'options'=>array('Friendship'=>'Friendship',
-  											 'Activity Partner'=>'Activity Partner',
-  											 'Email or Pen Pal'=>'Email or Pen Pal',
-  											 'Romance'=>'Romance',
-  											 'Casual Dating'=>'Casual Dating',
-  											 'Long-Term Relationship'=>'Long-Term Relationship',
-  											 'Marriage'=>'Marriage'))); ?>
-  	</p>
   	<div id="yui-texteditor">
     <p>
     	<?php echo $this->Form->label('health_cond', 'Health Conditions'); ?>
