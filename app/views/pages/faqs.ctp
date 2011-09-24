@@ -42,7 +42,7 @@ receive messages from other premium members. You must upgrade your account to a 
 <p class="answer">If a member finds an interesting Canary that is not yet a premium member, they can send them a Chirp to let the party 
 know they would like to communicate. The other party can then choose to upgrade to a premium membership, if they would like to reciprocate.</p>
 
-<p class="question">How can I upload my picture or avatar?</p>
+<p class="question">How can I upload my picture?</p>
 
 <p class="answer">You must first <?php echo $this->Html->link('Register', array('controller'=>'users', 'action'=>'add')); ?>. 
-	Then on the main navigation bar hover over the "Account" link, then click the "Avatar" link.</p>
+	Then on the main navigation bar hover over the "Account" link, then click the "Upload Photo" link.</p>

@@ -23,7 +23,7 @@
 		    <ul class="subnav">
 		      <li><?php echo $this->Html->link('Edit Account', array('controller'=>'users', 'action'=>'account'))?></li>
 		      <li><?php echo $this->Html->link('View Profile', array('controller'=>'users', 'action'=>'view', $current_user['User']['id']))?></li>
-		      <li><?php echo $this->Html->link('Avatar', array('controller'=>'avatars', 'action'=>'add'))?></li>
+		      <li><?php echo $this->Html->link('Upload Photo', array('controller'=>'avatars', 'action'=>'add'))?></li>
 		      <?php 
 		      // If they are not a premium member
 		      if($is_not_subscribed): ?>

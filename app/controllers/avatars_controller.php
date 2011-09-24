@@ -32,6 +32,7 @@ class AvatarsController extends AppController {
         }
       }
     }
+    $this->set('title_for_layout', 'Upload Your Photo');
   }
 
   public function edit() {
@@ -67,6 +68,7 @@ class AvatarsController extends AppController {
       $this->data = $this->Avatar->read();
     }
     $this->set('avatar', $avatar);
+    $this->set('title_for_layout', 'Change Your Photo');
   }
   
   /**
