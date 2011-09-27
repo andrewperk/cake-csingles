@@ -1,9 +1,24 @@
+<div id="account-header">
+<p class="float-left">
+<?php if ($user['Avatar']['avatar']): ?>
+  <?php echo $this->Html->image('avatars/small/' . $user['Avatar']['avatar']); ?>
+<?php else: ?>
+  <?php echo $this->Html->image('avatar.gif'); ?>
+<?php endif; ?>
+<span class="upload-photo-link">
+<?php echo $this->Html->link('Upload Photo', array('controller'=>'avatars', 'action'=>'add')); ?>
+</span>
+</p>
+
 <h1>
   <?php echo ucfirst($user['User']['username']); ?> 
   <small id="profile-link">
     <?php echo $this->Html->link('(View Your Profile)', array('action'=>'view', $user['User']['id'])); ?>
   </small>
 </h1>
+</div>
+
+
 
 <div class="important_note">
 	<p>Do not include email addresses or phone numbers in your Profile Information(ex. description etc.). They will be removed. 

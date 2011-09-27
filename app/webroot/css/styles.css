@@ -610,6 +610,19 @@ p#tos #UserToS {
 	font-size: 12px;
 }
 
+#main-content #account-header {
+	overflow: hidden;
+}
+
+#main-content #account-header h1 {
+	line-height: 90px;
+}
+
+#main-content span.upload-photo-link {
+	display: block;
+	margin-bottom: 10px;
+}
+
 /* ----- Users Search ----- */
 
 .user {
