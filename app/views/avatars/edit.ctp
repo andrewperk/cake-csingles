@@ -4,7 +4,7 @@
   <h2>Change Photo</h2>
   <p>Your current photo:</p><br />
   <p class="float-left"><?php echo $this->Html->image('avatars/small/' . $avatar['Avatar']['avatar']); ?></p><br />
-  <p><?php echo $this->Form->input('avatar', array('div'=>FALSE, 'type'=>'file')); ?></p>
+  <p><?php echo $this->Form->input('avatar', array('div'=>FALSE, 'type'=>'file', 'label'=>'Photo')); ?></p>
 </div>
 <p><?php echo $this->Form->submit('Upload', array('class'=>'button', 'div'=>FALSE)); ?></p>
 <?php echo $this->Form->end()?>

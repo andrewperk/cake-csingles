@@ -42,4 +42,7 @@
 <li>We reserve the right to terminate a membership at our discretion for any reason we deem appropriate.</li>
 
 <li>You are responsible for maintaining the confidentially of your username and password.</li>
+
+<li>We are trying to create a community that is understanding, compassionate and aware to the needs of the chemically sensitive. Therefore you must have some form of chemical injury to become a member at Canary Singles. This includes Multiple Chemical Sensitivity or MCS, Fibromyalgia or FMS, Gulf War Syndrome or GWS, Chronic Fatigue Syndrome or CFIDS, EMHS or Electromagnetic Hypersensitivity, Autism, Lyme or other chronic health conditions induced, exacerbated or perpetuated by environmental toxins found in common everyday chemicals.If it is found that you do not fit this criteria, your membership will be deleted.</li>
+
 </ul>
