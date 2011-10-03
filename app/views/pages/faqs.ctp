@@ -53,4 +53,9 @@ receive messages to and from other premium members. You must upgrade your accoun
 
 <p class="answer">You must first <?php echo $this->Html->link('Register', array('controller'=>'users', 'action'=>'add')); ?>. 
 	Then on the main navigation bar hover over the "Account" link, then click the "Upload Photo" link.</p>
+	
+<p class="question">How do I update my profile?</p>
+
+<p class="answer">To update your profile, click on the "Account" link in the navigation bar. To save your changes, you must enter your password
+ and confirm the changes at the bottom of the page.</p>
 

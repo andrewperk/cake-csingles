@@ -1,4 +1,4 @@
-<?php echo $this->Html->css(array('styles')); ?>
+<?php echo $this->Html->css('styles'); ?>
 <!--[if lte IE 6]>
 <?php echo $this->Html->css('ie6'); ?>
 <?php echo $this->Html->script('supersleight-min'); ?>

@@ -55,7 +55,7 @@
 	
 	<p class="description">
 	<?php if ($user['User']['desc']): ?>
-		<?php echo $this->Text->truncate($user['User']['desc'], 180); ?>
+		<?php echo $this->Text->truncate($user['User']['desc'], 80); ?>
 	<?php else: ?>
 		This user hasn't described themselves yet.
 	<?php endif; ?>

@@ -21,8 +21,8 @@
 
 
 <div class="important_note">
-	<p>Do not include email addresses or phone numbers in your Profile Information(ex. description etc.). They will be removed. 
-			If you violate this rule repeatedly, your membership will be cancelled.</p>
+	<p>Do not include email addresses, phone numbers, website URL's, or website names in your Profile Information(ex. description etc.). They will be removed. 
+			If you violate this rule more than once, your membership will be cancelled.</p>
 
 	<p>If you want to share your phone number or email address, this should be done through the messages system, 
 	which is available only after upgrading to a premium membership.</p>
