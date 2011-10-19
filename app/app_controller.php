@@ -31,7 +31,7 @@ class AppController extends Controller {
 	 * Paypal callback to handle what to do after a 
 	 * successful subscription. 
 	 * 
-	 * Upon successful subscription upgrade user to a a subscriber.
+	 * Upon successful subscription upgrade user to a a subscriber/premium member.
 	 * 
 	 * @param $txnId the paypal transaction id
 	 */
@@ -47,6 +47,20 @@ class AppController extends Controller {
 			if (!empty($user)) {
 				ClassRegistry::init('User')->id = $user['User']['id'];
 				ClassRegistry::init('User')->saveField('subscribed', 'yes');
+				
+				// Send user a confirmation email after becoming a premium member
+				$this->Email->to = $user['User']['email'];
+				$this->Email->from = "Canary Singles <support@canarysingles.com>";
+				$this->Email->subject = "Canary Singles - You've been upgraded to a premium membership";
+				$this->Email->template = "premium_confirmation";
+				$this->Email->sendAs = "text";
+				
+				$userData = array(
+					'username'=>$user['User']['username'],
+				);
+				
+				$this->set('user', $userData);
+				$this->Email->send();
 			}
 	  }
 	  else {
