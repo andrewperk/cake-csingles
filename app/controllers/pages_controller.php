@@ -101,5 +101,5 @@ class PagesController extends AppController {
 		$this->set('no_follow_meta', '<meta name="robots" content="noindex, nofollow">');
 		$this->set('title_for_layout', 'Canary Singles - Privacy Policy');
 	}
-
+	
 }

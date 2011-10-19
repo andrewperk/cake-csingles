@@ -518,6 +518,5 @@ You will receive a confirmation email with your account details.
 			$this->redirect(array('action'=>'account'));
 		}
 		$this->set('title_for_layout', 'Canary Singles - Reactivate Account');
-	}
-	
+	}	
 }

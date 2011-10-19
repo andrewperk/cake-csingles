@@ -713,45 +713,9 @@ p.reply-link {
 	float: right;
 }
 
-#yui-texteditor {
+#rte {
 	width: 600px;
 	margin-bottom: 25px;
-}
-
-#yui-texteditor h2 {
-	font-size: 12px;
-}
-
-#yui-texteditor h3 {
-	margin: 0 0 5px 0;
-	padding: 0;
-	font-size: 12px;
-	color: #000;
-}
-
-#yui-texteditor fieldset {
-	margin: 0;
-	padding: 0;
-	width: 700px;
-}
-
-#yui-texteditor .yui-toolbar-group {
-	margin: 0 15px 0 0;
-	padding: 0;
-}
-
-#yui-texteditor .yui-toolbar-group ul {
-	margin: 0;
-	padding: 0;
-}
-
-#yui-texteditor .yui-toolbar-groupitem {
-	margin: 0 0 0 0;
-	padding: 0;
-}
-
-#yui-texteditor .yui-toolbar-group-insertitem h3 {
-	display: inline;
 }
 
 /* ----- user-sidebar styles ---- */

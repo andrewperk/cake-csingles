@@ -21,10 +21,10 @@
 
 
 <div class="important_note">
-	<p>Do not include email addresses, phone numbers, website URL's, or website names in your Profile Information(ex. description etc.). They will be removed. 
-			If you violate this rule more than once, your membership will be cancelled.</p>
+	<p>Do not include email addresses, phone numbers, website URL's, or website names in your Profile Information. (ex. description etc.) 
+	They will be removed. If you violate this rule more than once, your membership will be canceled.</p>
 
-	<p>If you want to share your phone number or email address, this should be done through the messages system, 
+	<p>If you want to share your phone number, email address, or website this should be done through the personal messaging system, 
 	which is available only after upgrading to a premium membership.</p>
 </div>
 
@@ -82,7 +82,7 @@
   											 'Long-Term Relationship'=>'Long-Term Relationship',
   											 'Marriage'=>'Marriage'))); ?>
   	</p>
-  	<div id="yui-texteditor">
+  	<div id="rte">
     <p>
     	<?php echo $this->Form->label('desc', 'Describe Yourself'); ?>
     	<span class="help">(What you are seeking from a relationship? What is important and acceptable to you? What type of 
@@ -90,10 +90,10 @@
     	What about values, morals and intellect? Children? Are your children grown? What interests, 
     	hobbies, life goals do you want to share? Are you willing to relocate? What is completely unacceptable to you? 
     	Are you looking for friends, romance, nesting etc.)</span>
-    	<?php echo $this->Form->textarea('desc', array('div'=>FALSE, 'rows'=>'6', 'cols'=>'30')); ?>
+    	<?php echo $this->Form->textarea('desc', array('div'=>FALSE, 'rows'=>'6', 'cols'=>'30', 'class'=>'ckeditor')); ?>
     </p>
     </div>
-    <div id="yui-texteditor">
+    <div id="rte">
     <p>
     	<?php echo $this->Form->label('interests'); ?>
     	<span class="help">
@@ -101,16 +101,16 @@
     	current events, Internet/computers, sports, birdwatching, writing, politics, intellectual conversation, 
     	nutrition, alternative health, cooking, arts, etc.)
     	</span>
-    	<?php echo $this->Form->textarea('interests', array('div'=>FALSE, 'cols'=>'30', 'rows'=>'6')); ?>
+    	<?php echo $this->Form->textarea('interests', array('div'=>FALSE, 'cols'=>'30', 'rows'=>'6', 'class'=>'ckeditor')); ?>
   	</p>
   	</div>
-  	<div id="yui-texteditor">
+  	<div id="rte">
     <p>
     	<?php echo $this->Form->label('health_cond', 'Health Conditions'); ?>
     	<span class="help">
     	(MCS, EMF, Gulf War Syndrome, Autism, Chronic Fatigue, Fibromyalgia etc)
    		</span>
-    	<?php echo $this->Form->textarea('health_cond', array('div'=>FALSE, 'rows'=>'6', 'cols'=>'30')); ?>
+    	<?php echo $this->Form->textarea('health_cond', array('div'=>FALSE, 'rows'=>'6', 'cols'=>'30', 'class'=>'ckeditor')); ?>
   	</p>
   	</div>
     <p><?php echo $this->Form->input('sensitivity_level', array('div'=>FALSE, 'options'=>array('Severe'=>'Severe', 'Moderate'=>'Moderate', 'Mild'=>'Mild'))); ?></p>
@@ -125,4 +125,3 @@
 </div>
 <p><?php echo $this->Form->submit('Update', array('div'=>FALSE, 'class'=>'button', 'id'=>'submitButton')); ?></p>
 <?php echo $this->Form->end(); ?>
-<?php echo $this->element('account_rte'); ?>

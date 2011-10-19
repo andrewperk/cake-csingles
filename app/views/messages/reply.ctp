@@ -3,9 +3,9 @@
 <?php echo $this->Form->create('Message', array('url'=>array('action'=>'reply'))); ?>
 <p><?php echo $this->Form->input('friend_id', array('type'=>'hidden', 'value'=>$friend_id)); ?></p>
 <p><?php echo $this->Form->input('subject', array('div'=>FALSE)); ?></p>
-<div id="yui-texteditor">
+<div id="rte">
 <p><?php
-echo $this->Form->input('body', array('div'=>FALSE));
+echo $this->Form->input('body', array('div'=>FALSE, 'class'=>'ckeditor'));
 ?></p>
 </div>
 </div>
@@ -13,4 +13,3 @@ echo $this->Form->input('body', array('div'=>FALSE));
 echo $this->Form->submit('Send', array('class'=>'button', 'div'=>FALSE, 'id'=>'submitButton'));
 echo $this->Form->end();
 ?>
-<?php echo $this->element('rte'); ?>
