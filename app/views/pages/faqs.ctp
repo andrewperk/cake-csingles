@@ -17,12 +17,12 @@
 	members to let them know they are interested in getting to know them. This allows the non 
 	premium member to decide to upgrade to a premium membership, if they desire to interact.</p>
 
-<p class="question">How can I contact other members?</p>
+<p class="question">How do I contact other members?</p>
 
 <p class="answer">Premium members will have access to a personal messaging system within Canary Singles where they can send and 
-receive messages to and from other premium members. You must upgrade your account to a premium membership to contact members.</p>
+receive messages to and from other premium members. You must upgrade your account to a premium membership to contact members. After becoming a premium member, you must request a friendship with the person you desire to send a message to and they must accept your friendship, before an email can be sent. </p>
 
-<p class="question">Where do I upgrade to a premium membership at?</p>
+<p class="question">How do I upgrade to a premium membership?</p>
 
 <p class="answer">You must first <?php echo $this->Html->link('Register', array('controller'=>'users', 'action'=>'add')); ?>. 
 	Then on the main navigation bar hover over the "Account" link, if you have not upgraded to a premium membership yet you should see an 

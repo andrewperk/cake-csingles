@@ -631,7 +631,7 @@ p#tos #UserToS {
 	margin-bottom: 10px;
 	clear: both;
 	overflow: hidden;
-	height: 150px;
+	/*height: 200px;*/
 	font-size: 12px;
 }
 
