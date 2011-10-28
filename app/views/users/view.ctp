@@ -7,7 +7,7 @@
 <?php endif; ?>
 </p>
 <?php if ($this->Friend->not_friend_or_self($user['User']['id']) && $logged_in): ?>
-<p><?php echo $this->Html->link('Request Friend', array('action'=>'send_friend_request', $user['User']['id'])); ?></p>
+<p><?php echo $this->Html->link('Request Friend', array('action'=>'send_friend_request', $user['User']['id']), null, 'Are you sure you want to send '.$user['User']['username'].' a friend request?'); ?></p>
 <?php endif; ?>
 <h2><?php echo ucfirst($user['User']['username']); ?>'s Profile</h2>
 </div>
