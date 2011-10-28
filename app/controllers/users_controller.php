@@ -359,6 +359,25 @@ You will receive a confirmation email with your account details.
       }
       // Add friend
       if ($this->User->create_friend_request($user_id, $friend_id)) {
+      	// Send recipent of the friend request an email letting them know they 
+      	// have a friend request
+      	$recipient = $this->User->read(null, $friend_id);
+      	$from = $this->User->read(null, $user_id);
+      	
+		$this->Email->to = $recipient['User']['email'];
+		$this->Email->from = "Canary Singles <support@canarysingles.com>";
+		$this->Email->subject = $from['User']['username']." has sent you a friend request";
+		$this->Email->template = "friend_request";
+		$this->Email->sendAs = "text";
+		
+		$userData = array(
+			'username'=>$recipient['User']['username'],
+			'from_username'=>$from['User']['username']
+		);
+		
+		$this->set('userData', $userData);
+		$this->Email->send();
+      	
         $this->Session->setFlash('Friend Request Sent', 'default', array('class'=>'success'));
         $this->redirect(array('action'=>'index'));
       }
