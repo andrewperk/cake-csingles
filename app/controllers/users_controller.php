@@ -5,7 +5,12 @@ class UsersController extends AppController {
   public $paginate = array(
     'limit'=>'10'
   );
-	public $components = array('Email');
+	public $components = array('Email', 'Search.Prg');
+	public $presetVars = array(
+		array('field'=>'search_gender', 'type'=>'value'),
+		array('field'=>'search_state', 'type'=>'value'),
+		array('field'=>'search_name', 'type'=>'like')
+	);
   
   /**
    * Initialize the pages that are allowed by the auth 
@@ -110,86 +115,9 @@ class UsersController extends AppController {
 	 * 
    */
   public function index() {
-  	// Searching users
-  	if (!empty($this->data)) {
-  		
-  		// If name, gender, and state are empty
-  		if (empty($this->data['User']['search_name']) && empty($this->data['User']['search_gender']) && empty($this->data['User']['search_state'])) {
-  			$this->paginate = array('conditions'=>array('visible'=>1), 'limit'=>'10', 'order'=>'User.username');
-    		$this->set('users', $this->paginate('User'));
-  		}
-  		// By name, gender, and state
-  		if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_gender']) && !empty($this->data['User']['search_state'])) {
-  			$this->paginate = array('conditions' => array('OR'=>array(
-					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
-					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%',
-					'User.lastname LIKE' => '%'.$this->data['User']['search_name'].'%'),
-					'AND'=>array(
-					'visible'=>1,
-					'User.gender'=>$this->data['User']['search_gender'],
-					'User.state'=>$this->data['User']['search_state'])
-				), 'limit'=>'10', 'order'=>'User.username');
-  		}
-			// by name and gender
-			else if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_gender'])) {
-  			$this->paginate = array('conditions' => array('OR'=>array(
-					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
-					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%',
-					'User.lastname LIKE' => '%'.$this->data['User']['search_name'].'%'),
-					'AND'=>array(
-					'visible'=>1,
-					'User.gender'=>$this->data['User']['search_gender'])
-				), 'limit'=>'10', 'order'=>'User.username');
-  		}
-			// by name and state
-			else if (!empty($this->data['User']['search_name']) && !empty($this->data['User']['search_state'])) {
-  			$this->paginate = array('conditions' => array('OR'=>array(
-					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
-					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%',
-					'User.firstname LIKE' => '%'.$this->data['User']['search_name'].'%'),
-					'AND'=>array(
-					'visible'=>1,
-					'User.state'=>$this->data['User']['search_state'])
-				), 'limit'=>'10', 'order'=>'User.username');
-  		}
-			// by gender and state
-			else if (!empty($this->data['User']['search_gender']) && !empty($this->data['User']['search_state'])) {
-  			$this->paginate = array('conditions' => array(
-  				'visible'=>1,
-					'User.gender' => $this->data['User']['search_gender'],
-					'User.state'=>$this->data['User']['search_state']
-				), 'limit'=>'10', 'order'=>'User.username');
-  		}
-			// by name
-			else if (!empty($this->data['User']['search_name'])) {
-  			$this->paginate = array('conditions' => array('visible'=>1, 'OR'=>array(
-					'User.username LIKE' => '%'.$this->data['User']['search_name'].'%',
-					'User.firstname LIKE' => '%'.$this->data['User']['search_name'],
-					'User.lastname LIKE' => '%'.$this->data['User']['search_name'])
-				), 'limit'=>'10', 'order'=>'User.username');
-  		}
-			// by gender
-			else if (!empty($this->data['User']['search_gender'])) {
-  			$this->paginate = array('conditions' => array(
-  				'visible'=>1,
-					'User.gender' => $this->data['User']['search_gender']
-				), 'limit'=>'10', 'order'=>'User.username');
-  		}
-			// by state
-			else if (!empty($this->data['User']['search_state'])) {
-  			$this->paginate = array('conditions' => array(
-  				'visible'=>1,
-					'User.state' => $this->data['User']['search_state']
-				), 'limit'=>'10', 'order'=>'User.username');
-  		}
-			$results = $this->paginate('User');
-			$this->set('users', $results);
-		}
-		// Default retrieval of all users
-		else {
-			$this->paginate = array('conditions'=>array('visible'=>1), 'limit'=>'10', 'order'=>'User.username');
-    	$this->set('users', $this->paginate('User'));
-  	}
+		$this->Prg->commonProcess();
+		$this->paginate['conditions'] = $this->User->parseCriteria($this->passedArgs);
+		$this->set('users', $this->paginate());
 		$this->set('title_for_layout', 'Canary Singles - Search Members');
 	}
   

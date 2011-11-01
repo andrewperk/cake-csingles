@@ -56,7 +56,9 @@ partners, romance or pen pals.</p>
 
 <p>Please note that you must fill in your profile and upload a photo of yourself to be eligible for this drawing.</p>
 
-<p>Winners will be announced here on October 31st.</p> 
+<p>Winners will be announced here on October 31st.</p>
+
+<p>(Halloween drawing has been delayed until November 6th)</p> 
 
 <p class="bold"><?php echo $this->Html->link('Register Today', array('controller'=>'users', 'action'=>'add')); ?> - It's Free!.</p>
 

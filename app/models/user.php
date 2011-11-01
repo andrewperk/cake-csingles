@@ -1,6 +1,7 @@
 <?php
 
 class User extends AppModel {
+	public $actsAs = array('Search.Searchable');
   public $hasOne = array('Avatar');
   public $hasMany = array('Message', 'Chirp');
   public $hasAndBelongsToMany = array(
@@ -10,6 +11,12 @@ class User extends AppModel {
       'foreign_key'=>'user_id',
       'associationForeignKey'=>'friend_id'
     )
+  );
+  
+  public $filterArgs = array(
+  	array('name'=>'search_gender', 'type'=>'value', 'field'=>'User.gender'),
+  	array('name'=>'search_state', 'type'=>'value', 'field'=>'User.state'),
+  	array('name'=>'search_name', 'type'=>'like', 'field'=>'User.username')
   );
   
   public $validate = array(

@@ -94,8 +94,8 @@ class MessagesController extends AppController {
     function send_mass_message() {
     	// Admins can send a mass email to all users
     	if ($this->is_admin()) {
-			//$users = ClassRegistry::init('User')->find('all', array('recursive'=>-1, 'fields'=>array('username', 'email')));
-			$users = array(0=>array('User'=>array('username'=>'andrewperk', 'email'=>'andrewperk@gmail.com')), 1=>array('User'=>array('username'=>'cynthiaperkins', 'email'=>'cynthia.perkins@gmail.com')), 2=>array('User'=>array('username'=>'nouser', 'email'=>'joscmoe123898941@noonehsathismeail.org')), 3=>array('User'=>array('username'=>'andrewssupport', 'email'=>'support@andrewperkins.net')));
+			$users = ClassRegistry::init('User')->find('all', array('recursive'=>-1, 'fields'=>array('username', 'email')));
+			// $users = array(0=>array('User'=>array('username'=>'andrewperk', 'email'=>'andrewperk@gmail.com')), 1=>array('User'=>array('username'=>'cynthiaperkins', 'email'=>'cynthia.perkins@gmail.com')), 2=>array('User'=>array('username'=>'nouser', 'email'=>'joscmoe123898941@noonehsathismeail.org')), 3=>array('User'=>array('username'=>'andrewssupport', 'email'=>'support@andrewperkins.net')));
 			$this->set('users', $users);
 			$count = 0;
 			if (!empty($this->data)) {

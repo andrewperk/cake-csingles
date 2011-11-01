@@ -1,6 +1,6 @@
 <div id="search-users">
 	<h2>Search Members</h2>
-	<?php echo $this->Form->create('User'); ?>
+	<?php echo $this->Form->create('User', array('url'=>array_merge(array('action'=>'index'), $this->params['pass']))); ?>
 		<p><?php echo $this->Form->input('search_name', array('div'=>FALSE, 'label'=>'Name')); ?></p>
 		 <p><?php echo $this->Form->input('search_gender', array('div'=>FALSE, 'label'=>'Gender', 'options'=>array(''=>'', 'Male'=>'Male', 'Female'=>'Female'))); ?></p>
 		 <p><?php echo $this->Form->input('search_state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state', 'label'=>'State')); ?></p>
