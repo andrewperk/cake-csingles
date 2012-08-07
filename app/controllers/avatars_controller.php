@@ -70,6 +70,28 @@ class AvatarsController extends AppController {
     $this->set('avatar', $avatar);
     $this->set('title_for_layout', 'Change Your Photo');
   }
+
+  public function delete_avatar() {
+    // If user does not have an avatar send to add page
+    if (!$this->has_avatar()) {
+      $this->redirect(array('action'=>'add'));
+    }
+    
+    // Find the logged in users avatar
+    $avatar = $this->Avatar->findByUserId($this->Auth->user('id'));
+    $avatar_id = $avatar['Avatar']['id'];
+    $avatar_to_delete = $avatar['Avatar']['avatar'];
+    
+    // Delete the Avatar and thumb images first
+    $this->Image->delete_image($avatar_to_delete, 'avatars');
+
+    // Delete the avatar row from the DB
+    $this->Avatar->delete($avatar_id);
+
+    /// Redirect with success message
+    $this->Session->setFlash('Your picture has been deleted.', 'default', array('class'=>'success'));
+    $this->redirect(array('controller'=>'users', 'action'=>'view', $this->Auth->user('id')));
+  }
   
   /**
    * Checks if the logged in user has an avatar.

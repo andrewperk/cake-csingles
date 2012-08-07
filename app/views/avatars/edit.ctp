@@ -6,6 +6,7 @@
   <p class="float-left"><?php echo $this->Html->image('avatars/small/' . $avatar['Avatar']['avatar']); ?></p><br />
   <p><?php echo $this->Form->input('avatar', array('div'=>FALSE, 'type'=>'file', 'label'=>'Choose Your Photo')); ?></p>
   <span>(Photo must be smaller than 2000px)</span>
+  <p><?php echo $this->Html->link('Delete Image', array('controller'=>'avatars', 'action'=>'delete_avatar')); ?></p>
 </div>
 <p><?php echo $this->Form->submit('Upload', array('class'=>'button', 'div'=>FALSE)); ?></p>
 <?php echo $this->Form->end()?>
