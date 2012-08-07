@@ -1,5 +1,12 @@
 <IfModule mod_rewrite.c>
    RewriteEngine on
+   #dev
    RewriteRule    ^$ app/webroot/    [L]
    RewriteRule    (.*) app/webroot/$1 [L]
+   #production
+   #RewriteRule    ^$ /app/webroot/    [L]
+   #RewriteRule    (.*) /app/webroot/$1 [L]
 </IfModule>
+#AddType x-mapp-php5 .php
+#php_value display_errors off
+#php_value register_globals off	

@@ -1,5 +1,9 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
+    #dev
     RewriteRule    ^$    webroot/    [L]
     RewriteRule    (.*) webroot/$1    [L]
+    #production
+    #RewriteRule    ^$    /app/webroot/    [L]
+    #RewriteRule    (.*) /app/webroot/$1    [L]
  </IfModule>

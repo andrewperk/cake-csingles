@@ -1,10 +1,32 @@
 <div id="search-users">
 	<h2>Search Members</h2>
+	<p>You can search by name/username, gender, country, or state. You can search with just one field or use as many as you'd like.</p>
 	<?php echo $this->Form->create('User', array('url'=>array_merge(array('action'=>'index'), $this->params['pass']))); ?>
-		<p><?php echo $this->Form->input('search_name', array('div'=>FALSE, 'label'=>'Name')); ?></p>
+		<p class="float-left"><?php echo $this->Form->input('search_name', array('div'=>FALSE, 'label'=>'Name')); ?></p>
 		 <p><?php echo $this->Form->input('search_gender', array('div'=>FALSE, 'label'=>'Gender', 'options'=>array(''=>'', 'Male'=>'Male', 'Female'=>'Female'))); ?></p>
+		 <br />
+		 <p class="float-left">
+  			<?php echo $this->Form->input('search_country', array('div'=>FALSE, 'label'=>'Country',
+  				'options'=>array(''=>'',
+  								 'States'=>'United States',
+								 'Australia'=>'Australia',
+								 'Canada'=>'Canada',
+								 'China'=>'China',
+								 'France'=>'France',
+								 'Germany'=>'Germany',
+								 'Italy'=>'Italy',
+								 'Japan'=>'Japan',
+								 'Mexico'=>'Mexico',
+								 'Spain'=>'Spain',
+								 'Kingdom'=>'United Kingdom'))); ?>
+  		</p>
 		 <p><?php echo $this->Form->input('search_state', array('div'=>FALSE, 'maxlength'=>2, 'class'=>'state', 'label'=>'State')); ?></p>
-	<p>
+
+		 <?php //if($is_admin): ?>
+		 	<p><?php //echo $this->Form->input('search_email', array('div'=>FALSE)); ?></p><br />
+		<?php //endif; ?>
+		
+	<p class="button">
 	<?php
 		echo $this->Form->submit('Search', array('class'=>'button'));
 	?>
@@ -31,25 +53,25 @@
 	</p>
 	
 	<p class="headline">
-	<?php if ($user['User']['headline']): ?>
-		<?php echo $this->Text->truncate($user['User']['headline'], 100); ?>
+	<?php if (h($user['User']['headline'])): ?>
+		<?php echo $this->Text->truncate(h($user['User']['headline']), 100); ?>
 	<?php else: ?>
 		This user hasn't created a headline.
 	<?php endif; ?>
 	</p>
 	
-	<p class="username"><?php echo $this->Html->link($user['User']['username'], array('action'=>'view', $user['User']['id'])); ?> 
+	<p class="username"><?php echo $this->Html->link(h($user['User']['username']), array('action'=>'view', $user['User']['id'])); ?> 
 		<?php if($user['User']['looking_for']): ?>
-			(Looking For: <?php echo $user['User']['looking_for']; ?>)
+			(Looking For: <?php echo h($user['User']['looking_for']); ?>)
 		<?php endif; ?>
 		<?php if ($user['User']['gender']): ?>
-			- <?php echo $user['User']['gender']; ?> 
+			- <?php echo h($user['User']['gender']); ?> 
 		<?php endif; ?>
 		<?php if ($user['User']['age']): ?>
-				<?php echo $user['User']['age']; ?> years old
+				<?php echo h($user['User']['age']); ?> years old
 		<?php endif; ?>
 		<?php if ($user['User']['country']): ?>
-			 from <?php echo $user['User']['country']; ?>
+			 from <?php echo h($user['User']['country']); ?>
 		<?php endif; ?>
 		</p>
 	
@@ -75,6 +97,11 @@
 		<?php echo $this->Html->link('View Profile', array('controller'=>'users', 'action'=>'view', $user['User']['id'])); ?>
 		<?php if ($is_admin): ?>
 			| <?php echo $this->Html->link('Delete User', array('controller'=>'users', 'action'=>'delete', $user['User']['id']), NULL, 'Are you sure you want to delete this user?'); ?>
+			| <?php if($user['User']['subscribed'] == "yes"): ?>
+				<?php echo $this->Html->link('Downgrade ('.$user['User']['email'].')', array('controller'=>'users', 'action'=>'downgrade_member', $user['User']['id'])); ?>
+			  <?php else: ?>
+			  	<?php echo $this->Html->link('Upgrade ('.$user['User']['email'].')', array('controller'=>'users', 'action'=>'upgrade_member', $user['User']['id'])); ?>
+			  <?php endif; ?>
 		<?php endif; ?>
 </div> 
 <?php endforeach; ?>

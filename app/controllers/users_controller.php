@@ -9,7 +9,9 @@ class UsersController extends AppController {
 	public $presetVars = array(
 		array('field'=>'search_gender', 'type'=>'value'),
 		array('field'=>'search_state', 'type'=>'value'),
-		array('field'=>'search_name', 'type'=>'like')
+		array('field'=>'search_name', 'type'=>'like'),
+		//array('field'=>'search_email)', 'type'=>'like'),
+		array('field'=>'search_country', 'type'=>'like')
 	);
   
   /**
@@ -23,7 +25,7 @@ class UsersController extends AppController {
    */
   public function beforeFilter() {
     parent::beforeFilter();
-		$this->Auth->deny('index');
+	$this->Auth->deny('index');
     $this->Auth->allow('add', 'view', 'resend_password');
     
     // If registering or editing user use model for password hashing.
@@ -466,4 +468,44 @@ You will receive a confirmation email with your account details.
 		}
 		$this->set('title_for_layout', 'Canary Singles - Reactivate Account');
 	}	
+	
+	public function drawing() {
+		if (!$this->is_admin()) {
+			$this->redirect(array('action'=>'index'));
+		}
+		
+		$male = $this->User->find('all', 
+			array(
+				'conditions'=>array('subscribed'=>'no', 'gender'=>'male', 'NOT'=>array('Avatar.avatar'=>null)), 
+				'fields'=>array('username', 'email', 'gender', 'Avatar.avatar')));
+		$female = $this->User->find('all', 
+			array(
+				'conditions'=>array('subscribed'=>'no', 'gender'=>'female', 'NOT'=>array('Avatar.avatar'=>null)), 
+				'fields'=>array('username', 'email', 'gender', 'Avatar.avatar')));
+		$this->set(compact('male', 'female'));
+	}
+	
+	public function downgrade_member($id = null) {
+		if (!$this->is_admin()) {
+			$this->redirect(array('action'=>'index'));
+		}
+		
+		$this->User->id = $id;
+		$user = $this->User->read();
+		$this->User->saveField('subscribed', 'no');
+		$this->Session->setFlash($user['User']['username'].' was downgraded and is no longer a Premium member.');
+		$this->redirect(array('action'=>'index'));
+	}
+
+	public function upgrade_member($id = null) {
+		if (!$this->is_admin()) {
+			$this->redirect(array('action'=>'index'));
+		}
+		
+		$this->User->id = $id;
+		$user = $this->User->read();
+		$this->User->saveField('subscribed', 'yes');
+		$this->Session->setFlash($user['User']['username'].' has been upgraded to be a Premium member.');
+		$this->redirect(array('action'=>'index'));
+	}
 }

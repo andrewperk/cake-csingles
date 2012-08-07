@@ -14,7 +14,7 @@
     <?php echo $this->Html->image('avatar.gif'); ?>
   <?php endif; ?>  
   <div>
-		<?php echo $this->Html->link(ucfirst($friend[0]['User']['username']), array('action'=>'view', $friend[0]['User']['id'])); ?> | 
+		<?php echo $this->Html->link(ucfirst(h($friend[0]['User']['username'])), array('action'=>'view', $friend[0]['User']['id'])); ?> | 
   	<?php echo $this->Html->link('Remove Friend', array('action'=>'delete_friend', $friend[0]['User']['id']), NULL, 'Are you sure?'); ?> |
 		<?php echo $this->Html->link('Send Message', array('controller'=>'messages', 'action'=>'send', $friend[0]['User']['id'])); ?>
 	</div>

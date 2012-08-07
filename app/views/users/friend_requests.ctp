@@ -11,7 +11,7 @@
     	<?php echo $this->Html->image('avatar.gif'); ?>
   	<?php endif; ?>
   	<div>
-	    <?php echo $this->Html->link($request['User']['username'], array('action'=>'view', $request['User']['id'])); ?> - 
+	    <?php echo $this->Html->link(h($request['User']['username']), array('action'=>'view', $request['User']['id'])); ?> - 
 	    <?php echo $this->Html->link('Accept', array('action'=>'accept_friend_request', $request['User']['id'])); ?>
     </div>
   </li>

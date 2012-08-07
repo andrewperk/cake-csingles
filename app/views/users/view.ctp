@@ -7,9 +7,9 @@
 <?php endif; ?>
 </p>
 <?php if ($this->Friend->not_friend_or_self($user['User']['id']) && $logged_in): ?>
-<p><?php echo $this->Html->link('Request Friend', array('action'=>'send_friend_request', $user['User']['id']), null, 'Are you sure you want to send '.$user['User']['username'].' a friend request?'); ?></p>
+<p><?php echo $this->Html->link('Request Friend', array('action'=>'send_friend_request', $user['User']['id']), null, 'Are you sure you want to send '.h($user['User']['username']).' a friend request?'); ?></p>
 <?php endif; ?>
-<h2><?php echo ucfirst($user['User']['username']); ?>'s Profile</h2>
+<h2><?php echo ucfirst(h($user['User']['username'])); ?>'s Profile</h2>
 </div>
 
 <div class="profile">
@@ -19,7 +19,7 @@
       <td class="label">Name: </td>
       <td>
       	<?php if($user['User']['firstname']): ?>
-      		<?php echo $user['User']['firstname']; ?> <?php echo $user['User']['lastname']; ?>
+      		<?php echo h($user['User']['firstname']); ?> <?php echo h($user['User']['lastname']); ?>
       	<?php else: ?>
       		N/A
       	<?php endif; ?>
@@ -29,7 +29,7 @@
       <td class="label">Gender: </td>
       <td>
         <?php if($user['User']['gender']): ?>
-        <?php echo $user['User']['gender']; ?>
+        <?php echo h($user['User']['gender']); ?>
         <?php else: ?>
         None
         <?php endif; ?>
@@ -39,7 +39,7 @@
       <td class="label">Age: </td>
       <td>
         <?php if($user['User']['age']): ?>
-        <?php echo $user['User']['age']; ?>
+        <?php echo h($user['User']['age']); ?>
         <?php else: ?>
         None
         <?php endif; ?>
@@ -49,7 +49,7 @@
       <td class="label">Country: </td>
       <td>
         <?php if($user['User']['country']): ?>
-        <?php echo $user['User']['country']; ?>
+        <?php echo h($user['User']['country']); ?>
         <?php else: ?>
         None
         <?php endif; ?>
@@ -59,7 +59,7 @@
       <td class="label">State: </td>
       <td>
         <?php if($user['User']['state']): ?>
-        <?php echo strtoupper($user['User']['state']); ?>
+        <?php echo strtoupper(h($user['User']['state'])); ?>
         <?php else: ?>
         None
         <?php endif; ?>
@@ -87,7 +87,7 @@
       <td class="label">I am: </td>
       <td>
         <?php if($user['User']['iam']): ?>
-        <?php echo $user['User']['iam']; ?>
+        <?php echo h($user['User']['iam']); ?>
         <?php else: ?>
         seeking canaries
         <?php endif; ?>
@@ -97,7 +97,7 @@
       <td class="label">Looking For: </td>
       <td>
         <?php if($user['User']['looking_for']): ?>
-        <?php echo $user['User']['looking_for']; ?>
+        <?php echo h($user['User']['looking_for']); ?>
         <?php else: ?>
         None
         <?php endif; ?>
@@ -135,7 +135,7 @@
       <td class="label">Sensitivity Level: </td>
       <td>
         <?php if($user['User']['sensitivity_level']): ?>
-        <?php echo $user['User']['sensitivity_level']; ?>
+        <?php echo h($user['User']['sensitivity_level']); ?>
         <?php else: ?>
         None
         <?php endif; ?>

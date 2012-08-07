@@ -13,8 +13,8 @@
       <?php endif; ?>  
     </p>
     <div class="message-intro">
-      <p><?php echo ucfirst($message['User']['username']); ?>: 
-      <?php echo $message['Message']['subject']; ?></p>
+      <p><?php echo ucfirst(h($message['User']['username'])); ?>: 
+      <?php echo h($message['Message']['subject']); ?></p>
       <p><?php echo $this->Html->link('Read More', array('action'=>'view', $message['Message']['id'])); ?></p>
     </div>
   </div>

@@ -1,4 +1,4 @@
-Hi <?php echo $user['username']; ?>,
+Hi <?php echo h($user['username']); ?>,
 
 Thank you for your payment. You are now a premium member. 
 

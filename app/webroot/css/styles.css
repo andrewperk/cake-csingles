@@ -460,7 +460,7 @@ blockquote {
 	margin: 0 3px 0 10px;
 }*/
 
-#search-users p {
+#search-users p.float-left {
 	float: left;
 }
 
@@ -470,8 +470,9 @@ blockquote {
 	padding: 0 5px 0 0;
 }
 
-#search-users p.button {
+#search-users .button {
 	clear: both;
+	display: block;
 }
 
 #main-content form input#UserVisible {

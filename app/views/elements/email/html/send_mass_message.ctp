@@ -1,3 +1,3 @@
-<p>Hello <?php echo $user['username']; ?>,</p>
+<p>Hello <?php echo h($user['username']); ?>,</p>
 
 <?php echo $user['message']; ?>

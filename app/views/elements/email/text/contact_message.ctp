@@ -1,11 +1,11 @@
 Canary Singles Contact Message from:
 ----------------------------------------
 
-<?php echo $message['name']; ?> 
-<?php echo $message['email']; ?> 
+<?php echo h($message['name']); ?> 
+<?php echo h($message['email']); ?> 
 
 -------------------
-<?php echo $message['subject']; ?> 
+<?php echo h($message['subject']); ?> 
 -------------------
 
-<?php echo $message['body']; ?> 
+<?php echo h($message['body']); ?> 

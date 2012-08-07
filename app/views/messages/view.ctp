@@ -1,7 +1,7 @@
-<h1><?php echo ucfirst($message['User']['username']); ?> says:</h1>
+<h1><?php echo ucfirst(h($message['User']['username'])); ?> says:</h1>
 <div class="user-message">
   <h4>
-    <?php echo $message['Message']['subject']; ?>
+    <?php echo h($message['Message']['subject']); ?>
   </h4>
   <div id="message-body">
       <?php echo $message['Message']['body']; ?>

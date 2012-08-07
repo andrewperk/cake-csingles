@@ -44,7 +44,7 @@ class AppController extends Controller {
 	  if($transaction['InstantPaymentNotification']['payment_status'] == 'Completed'){
 	  	// grab the user variable that was returned from paypal and upgrade that user to subscribed
 	  	$user = ClassRegistry::init('User')->findById($transaction['InstantPaymentNotification']['custom']);
-			if (!empty($user)) {
+			if (!empty($user) && $user['User']['subscribed'] == 'no') {
 				ClassRegistry::init('User')->id = $user['User']['id'];
 				ClassRegistry::init('User')->saveField('subscribed', 'yes');
 				

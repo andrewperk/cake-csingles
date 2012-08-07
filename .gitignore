@@ -1,8 +1,12 @@
 /app/config
 /app/tmp
+/app/plugins
+/app/vendors
 /plugins
 /vendors
-/app/webroot/img/avatars/big/*
-/app/webroot/img/avatars/small/*
+/app/webroot/img/avatars/big
+/app/webroot/img/avatars/small
+/app/webroot/img/temp
 /app/plugins/paypal_ipn/config/paypal_ipn_config.php
 /.redcar/
+/php.ini

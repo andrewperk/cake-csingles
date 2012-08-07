@@ -1,11 +1,11 @@
 sfHover = function() {
-	var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+	var sfEls = document.getElementById("main-nav").getElementsByTagName("li");
 	for (var i=0; i<sfEls.length; i++) {
 		sfEls[i].onmouseover=function() {
-			this.className+=" sfhover";
+			this.className+=" hover";
 		}
 		sfEls[i].onmouseout=function() {
-			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+			this.className=this.className.replace(new RegExp(" hover\\b"), "");
 		}
 	}
 }

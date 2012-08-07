@@ -11,7 +11,7 @@
 </p>
 
 <h1>
-  <?php echo ucfirst($user['User']['username']); ?> 
+  <?php echo ucfirst(h($user['User']['username'])); ?> 
   <small id="profile-link">
     <?php echo $this->Html->link('(View Your Profile)', array('action'=>'view', $user['User']['id'])); ?>
   </small>
