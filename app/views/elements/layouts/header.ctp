@@ -10,7 +10,7 @@
   <?php if ($logged_in): ?>
   <div id="login">
     <p class="logged_in_as">
-      You are logged in as: &nbsp;<br /> <?php echo ucfirst(h($current_user['User']['username'])); ?>.
+      You are logged in as: &nbsp;<br /> <?php echo ucfirst($current_user['User']['username']); ?>.
     </p>
   </div>
   <?php else: ?>

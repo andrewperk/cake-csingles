@@ -1,7 +1,7 @@
 <?php
 
 class User extends AppModel {
-  public $actsAs = array('Search.Searchable');
+	public $actsAs = array('Search.Searchable');
   public $hasOne = array('Avatar');
   public $hasMany = array('Message', 'Chirp');
   public $hasAndBelongsToMany = array(
