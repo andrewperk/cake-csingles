@@ -77,7 +77,7 @@
 	
 	<p class="description">
 	<?php if ($user['User']['desc']): ?>
-		<?php echo $this->Text->truncate($user['User']['desc'], 80); ?>
+		<?php echo $this->Text->truncate($this->Hpurifier->purify($user['User']['desc']), 80); ?>
 	<?php else: ?>
 		This user hasn't described themselves yet.
 	<?php endif; ?>
@@ -89,7 +89,7 @@
 			<?php echo $this->Html->link('Send Chirp', array('controller'=>'chirps', 'action'=>'chirp', $user['User']['id'])); ?> | 
 		<?php else: ?>
 			<?php if ($this->Friend->not_friend_or_self($user['User']['id'])):?>
-				<?php echo $this->Html->link('Request Friend', array('controller'=>'users', 'action'=>'send_friend_request', $user['User']['id']), null, 'Are you sure you want to send '.$user['User']['username'].' a friend request?'); ?> |
+				<?php echo $this->Html->link('Request Friend', array('controller'=>'users', 'action'=>'send_friend_request', $user['User']['id']), null, 'Are you sure you want to send '.h($user['User']['username']).' a friend request?'); ?> |
 			<?php else:?>
 				<?php echo $this->Html->link('Send Message', array('controller'=>'messages', 'action'=>'send', $user['User']['id'])); ?> |
 			<?php endif; ?>

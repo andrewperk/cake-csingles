@@ -73,7 +73,7 @@
       <td class="label">Description: </td>
       <td>
         <?php if($user['User']['desc']): ?>
-        <?php echo $user['User']['desc']; ?>
+        <?php echo $this->Hpurifier->purify($user['User']['desc']); ?>
         <?php else: ?>
         None
         <?php endif; ?>
@@ -111,7 +111,7 @@
       <td class="label">Interests: </td>
       <td>
         <?php if($user['User']['interests']): ?>
-        <?php echo $user['User']['interests']; ?>
+        <?php echo $this->Hpurifier->purify($user['User']['interests']); ?>
         <?php else: ?>
         None
         <?php endif; ?>
@@ -125,7 +125,7 @@
       <td class="label">Health Conditions: </td>
       <td>
         <?php if($user['User']['health_cond']): ?>
-        <?php echo $user['User']['health_cond']; ?>
+        <?php echo $this->Hpurifier->purify($user['User']['health_cond']); ?>
         <?php else: ?>
         None
         <?php endif; ?>

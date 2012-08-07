@@ -17,16 +17,16 @@ class MessagesController extends AppController {
 	}
 
 	public function index() {
-	$this->set('messages', $this->Message->find_messages($this->Auth->user('id')));
+		$this->set('messages', $this->Message->find_messages($this->Auth->user('id')));
 	}
 
 	public function view($id = NULL) {
-	$message = $this->Message->read(NULL, $id);
-	// Logged in user can only view his/her own messages
-	if ($message['Message']['friend_id'] != $this->Auth->user('id')) {
-	  $this->redirect(array('controller'=>'messages', 'action'=>'index'));
-	}
-	$this->set('message', $message);
+		$message = $this->Message->read(NULL, $id);
+		// Logged in user can only view his/her own messages
+		if ($message['Message']['friend_id'] != $this->Auth->user('id')) {
+		  $this->redirect(array('controller'=>'messages', 'action'=>'index'));
+		}
+		$this->set('message', $message);
 	}
 
 	public function send($friend_id = NULL) {

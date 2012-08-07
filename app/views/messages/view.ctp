@@ -4,7 +4,7 @@
     <?php echo h($message['Message']['subject']); ?>
   </h4>
   <div id="message-body">
-      <?php echo $message['Message']['body']; ?>
+      <?php echo $this->Hpurifier->purify($message['Message']['body']); ?>
   </div>
 </div>
 <p class="reply-link"><?php echo $this->Html->link('Reply', array('action'=>'reply', $message['Message']['id'], $message['User']['id'])); ?></p>

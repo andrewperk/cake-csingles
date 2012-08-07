@@ -8,4 +8,4 @@ Canary Singles Contact Message from:
 <?php echo h($message['subject']); ?> 
 -------------------
 
-<?php echo h($message['body']); ?> 
+<?php echo $this->Hpurifier->purify($message['body']); ?> 
